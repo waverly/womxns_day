@@ -1,7 +1,7 @@
 #import * from './generated/prisma.graphql'
 
 type Mutation {
-    createWoman(name: String, description: String): Woman
+    createWoman(name: String): Woman
 }
 
 type Query {

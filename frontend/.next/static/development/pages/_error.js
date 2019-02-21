@@ -6467,7 +6467,7 @@ if (hadRuntime) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __NEXT_REGISTER_PAGE('/_error', function() {
-module.exports = __webpack_require__(/*! /Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/node_modules/next/dist/pages/_error.js */"./node_modules/next/dist/pages/_error.js");
+module.exports = __webpack_require__(/*! /Users/waverly/Documents/Development/womxn/womxn_day/frontend/node_modules/next/dist/pages/_error.js */"./node_modules/next/dist/pages/_error.js");
 
 return { page: module.exports.default }});
 

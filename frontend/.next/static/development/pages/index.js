@@ -25,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Women__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Women */ "./components/Women.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
 
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/components/CreateWoman.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/CreateWoman.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -248,7 +248,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/components/ErrorMessage.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/ErrorMessage.js";
 
 
 
@@ -332,7 +332,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/components/Manifesto.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Manifesto.js";
 
 
 var ManifestoWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
@@ -391,7 +391,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_ShareStyles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/ShareStyles */ "./components/styles/ShareStyles.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/components/Share.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Share.js";
 
 
 
@@ -446,7 +446,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_WomanStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/WomanStyles */ "./components/styles/WomanStyles.js");
 /* harmony import */ var _styles_PriceTag__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/PriceTag */ "./components/styles/PriceTag.js");
 /* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/components/Woman.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Woman.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -533,7 +533,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CreateWoman__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CreateWoman */ "./components/CreateWoman.js");
 /* harmony import */ var _WomenList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./WomenList */ "./components/WomenList.js");
 /* harmony import */ var _Manifesto__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Manifesto */ "./components/Manifesto.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/components/Women.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Women.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -556,7 +556,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  query ALL_WOMEN_QUERY {\n    women {\n      id\n      name\n      description\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  query ALL_WOMEN_QUERY {\n    women {\n      id\n      name\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -716,7 +716,7 @@ function (_Component) {
         onMouseMove: this._onMouseMove,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160
+          lineNumber: 159
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
@@ -724,7 +724,7 @@ function (_Component) {
         refetch: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 181
         },
         __self: this
       }, function (_ref) {
@@ -734,21 +734,21 @@ function (_Component) {
         if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 184
+            lineNumber: 183
           },
           __self: this
         }, "Loading...");
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 185
+            lineNumber: 184
           },
           __self: this
         }, "Error: ", error.message);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 187
+            lineNumber: 186
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -759,13 +759,13 @@ function (_Component) {
           matrix3DVal2: _this2.state.matrix3DVal2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 189
+            lineNumber: 188
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CreateWoman__WEBPACK_IMPORTED_MODULE_5__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 196
+            lineNumber: 195
           },
           __self: this
         }));
@@ -798,7 +798,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_WomenList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/WomenList */ "./components/styles/WomenList.js");
 /* harmony import */ var _Share__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Share */ "./components/Share.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/components/WomenList.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/WomenList.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -46872,7 +46872,7 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Women__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Women */ "./components/Women.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/pages/index.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/pages/index.js";
 
 
 

@@ -12,7 +12,6 @@ const ALL_WOMEN_QUERY = gql`
     women {
       id
       name
-      description
     }
   }
 `;
