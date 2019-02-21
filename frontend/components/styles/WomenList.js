@@ -51,6 +51,15 @@ export const WomenListWrap = styled.div`
       margin-block-end: 10px;
       height: auto;
       transition: 0.5s all;
+      line-height: 0.8;
+      margin-block-start: 2rem;
+      margin-block-end: 2rem;
+      text-align: justify;
+
+      &:hover {
+        color: black;
+        -webkit-text-stroke: 2px blue;
+      }
     }
   }
 `;
@@ -60,8 +69,8 @@ export const Container = styled.div`
   overflow: hidden;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  outline: 2px solid red;
-  background: black;
+  /* outline: 2px solid red; */
+  background: transparent;
   position: relative;
   &:before {
     content: "";

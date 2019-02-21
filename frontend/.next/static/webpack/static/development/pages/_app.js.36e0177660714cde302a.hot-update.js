@@ -81,7 +81,7 @@ function (_App) {
 
         if (hash !== "") {
           var id = hash.substr(1);
-          var elScrollHeight = document.querySelector("[data-nameId]=\"".concat(id, "\"")).offsetTop;
+          var elScrollHeight = document.querySelector("[data-nameid]=\"".concat(id, "\"")).offsetTop;
           var halfHeight = window.innerHeight / 2.5;
           var newHeight = elScrollHeight - halfHeight;
           console.log(document.querySelectorAll(".".concat(id)));

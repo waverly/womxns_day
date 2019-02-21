@@ -858,6 +858,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_onScroll", function (e) {
       var bodyScrollTop = window.pageYOffset;
+      console.log(window.pageYOffset);
 
       _this.setState({
         scrollTop: bodyScrollTop
@@ -885,7 +886,9 @@ function (_Component) {
       if (prevProps.women.length !== this.props.women.length) {
         Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setBodyHeight"])();
         console.log(this.props.women[this.props.women.length - 1]);
-        var newElId = document.getElementById("womanList").querySelector(".hidden").lastChild.id;
+        var newEl = document.getElementById("womanList").querySelector(".hidden").lastChild;
+        newEl.classList.add("highlighted");
+        var newElId = newEl.dataset.nameid;
         console.log(document.getElementById("womanList").lastChild);
         var newlyAddedItem = {
           name: this.props.women[this.props.women.length - 1].name,
@@ -921,18 +924,18 @@ function (_Component) {
         var womenWithId = this.props.women.map(function (woman, index) {
           var personId = woman.name.replace(/[^a-zA-Z ]/g, "").split(" ").join("") + index;
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            "data-nameId": personId,
+            "data-nameid": personId,
             className: "womanItem ".concat(personId),
             key: woman.id + personId + index,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 70
+              lineNumber: 77
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 75
+              lineNumber: 82
             },
             __self: this
           }, woman.name));
@@ -944,13 +947,13 @@ function (_Component) {
             key: woman.id + index,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 88
+              lineNumber: 95
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 89
+              lineNumber: 96
             },
             __self: this
           }, woman.name));
@@ -958,7 +961,7 @@ function (_Component) {
         var containers = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 102
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["WomenListWrap"], {
@@ -967,7 +970,7 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96
+            lineNumber: 103
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -977,14 +980,14 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 101
+            lineNumber: 108
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 131
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -995,27 +998,27 @@ function (_Component) {
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 125
+            lineNumber: 132
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 134
+            lineNumber: 141
           },
           __self: this
         }, allWomen)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138
+            lineNumber: 145
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 139
+            lineNumber: 146
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -1029,14 +1032,14 @@ function (_Component) {
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 147
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 152
+            lineNumber: 159
           },
           __self: this
         }, womenWithId)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -1046,14 +1049,14 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 156
+            lineNumber: 163
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 179
+            lineNumber: 186
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -1064,14 +1067,14 @@ function (_Component) {
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 180
+            lineNumber: 187
           },
           __self: this
         }, allWomen)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Share__WEBPACK_IMPORTED_MODULE_4__["default"], {
           woman: this.state.newlyAddedItem,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 194
+            lineNumber: 201
           },
           __self: this
         }));
@@ -1112,8 +1115,12 @@ var setBodyHeight = function setBodyHeight() {
       var womanListHeight = document.getElementById("womanList").scrollHeight; // TODO: adjust bottom padding for responsive
       // calculate half of window height and add to women's list
 
-      var halfHeight = window.innerHeight / 2.5;
-      document.body.style.height = womanListHeight + halfHeight + "px";
+      var halfHeight = window.innerHeight / 1.5;
+      console.log({
+        womanListHeight: womanListHeight,
+        halfHeight: halfHeight
+      });
+      document.body.style.height = womanListHeight + womanListHeight * 0.1 + "px";
     }
   }
 };
@@ -1243,11 +1250,11 @@ __webpack_require__.r(__webpack_exports__);
 var WomenListWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "WomenList__WomenListWrap",
   componentId: "sc-3l0rl8-0"
-})(["position:fixed;top:0;left:0;width:80vw;left:10vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;}.womanItem{width:100%;background:transparent;display:flex;justify-content:center;align-items:center;-webkit-transform:translate3d(0,0,0);h1{color:blue;text-transform:uppercase;font-size:6vw;font-weight:900;text-align:center;width:100%;max-width:max-content;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;}}"]);
+})(["position:fixed;top:0;left:0;width:80vw;left:10vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;}.womanItem{width:100%;background:transparent;display:flex;justify-content:center;align-items:center;-webkit-transform:translate3d(0,0,0);h1{color:blue;text-transform:uppercase;font-size:6vw;font-weight:900;text-align:center;width:100%;max-width:max-content;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;line-height:0.8;margin-block-start:2rem;margin-block-end:2rem;text-align:justify;&:hover{color:black;-webkit-text-stroke:2px blue;}}}"]);
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "WomenList__Container",
   componentId: "sc-3l0rl8-1"
-})(["height:calc(100vh / 3);overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;outline:2px solid red;background:black;position:relative;&:before{content:\"\";position:absolute;top:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:-o-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:linear-gradient( to bottom,rgba(0,0,0,0.8),rgba(17,17,17,0) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}&:after{content:\"\";position:absolute;bottom:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:-o-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:linear-gradient( to bottom,rgba(17,17,17,0),rgba(0,0,0,0.8) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}"]);
+})(["height:calc(100vh / 3);overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent;position:relative;&:before{content:\"\";position:absolute;top:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:-o-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:linear-gradient( to bottom,rgba(0,0,0,0.8),rgba(17,17,17,0) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}&:after{content:\"\";position:absolute;bottom:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:-o-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:linear-gradient( to bottom,rgba(17,17,17,0),rgba(0,0,0,0.8) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}"]);
 var InnerWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "WomenList__InnerWrap",
   componentId: "sc-3l0rl8-2"

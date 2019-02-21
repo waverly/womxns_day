@@ -49110,33 +49110,20 @@ function (_App) {
       if (typeof window === "undefined") {
         return 0;
       } else if (typeof window != "undefined") {
-        console.log(window.location);
         var hash = window.location.hash;
-        console.log({
-          hash: hash
-        });
 
         if (hash !== "") {
           var id = hash.substr(1);
-          var elScrollHeight = document.querySelector("[data-nameId=\"".concat(id, "\"]")).offsetTop;
+          var elScrollHeight = document.querySelector("[data-nameid=\"".concat(id, "\"]")).offsetTop;
           var halfHeight = window.innerHeight / 2.5;
-          var newHeight = elScrollHeight - halfHeight;
-          console.log(document.querySelectorAll(".".concat(id)));
+          var totalScrollHeight = elScrollHeight - halfHeight;
           document.querySelectorAll(".".concat(id)).forEach(function (el) {
-            console.log(el);
             el.classList.add("highlighted");
           });
-          console.log({
-            elScrollHeight: elScrollHeight,
-            newHeight: newHeight,
-            halfHeight: halfHeight
-          });
-          console.log(window.pageYOffset);
 
           if (elScrollHeight) {
-            window.scrollTo(0, elScrollHeight);
             window.scrollTo({
-              top: newHeight,
+              top: totalScrollHeight,
               left: 0,
               behavior: "smooth"
             });
@@ -49156,26 +49143,26 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 58
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_4__["ApolloProvider"], {
         client: apollo,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 60
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 61
         },
         __self: this
       })))));

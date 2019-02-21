@@ -23,10 +23,16 @@ class WomenList extends Component {
       setBodyHeight();
       console.log(this.props.women[this.props.women.length - 1]);
 
-      const newElId = document
+      const newEl = document
         .getElementById("womanList")
-        .querySelector(".hidden").lastChild.id;
+        .querySelector(".hidden").lastChild;
+
+      newEl.classList.add("highlighted");
+
+      const newElId = newEl.dataset.nameid;
+
       console.log(document.getElementById("womanList").lastChild);
+
       const newlyAddedItem = {
         name: this.props.women[this.props.women.length - 1].name,
         id: newElId
@@ -53,6 +59,7 @@ class WomenList extends Component {
   // This will run the first time setBodyHeight is called.
   _onScroll = e => {
     const bodyScrollTop = window.pageYOffset;
+    console.log(window.pageYOffset);
     this.setState({ scrollTop: bodyScrollTop });
   };
 
@@ -68,7 +75,7 @@ class WomenList extends Component {
             .join("") + index;
         return (
           <div
-            data-nameId={personId}
+            data-nameid={personId}
             className={`womanItem ${personId}`}
             key={woman.id + personId + index}
           >

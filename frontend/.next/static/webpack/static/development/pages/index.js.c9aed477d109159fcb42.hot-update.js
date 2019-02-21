@@ -134,7 +134,7 @@ function (_Component) {
         var womenWithId = this.props.women.map(function (woman, index) {
           var personId = woman.name.replace(/[^a-zA-Z ]/g, "").split(" ").join("") + index;
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            "data-nameId": personId,
+            "data-nameid": personId,
             className: "womanItem ".concat(personId),
             key: woman.id + personId + index,
             __source: {
