@@ -1,0 +1,5 @@
+type Woman {
+  id: ID! @unique
+  name: String!
+  createdAt: DateTime!
+}
