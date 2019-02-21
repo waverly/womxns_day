@@ -18,6 +18,11 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: 'history.scrollRestoration = "manual";'
+            }}
+          />
         </body>
       </html>
     );

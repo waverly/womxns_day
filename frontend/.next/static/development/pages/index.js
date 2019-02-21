@@ -390,33 +390,42 @@ var Manifesto = function Manifesto(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_ShareStyles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/ShareStyles */ "./components/styles/ShareStyles.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _styles_ShareStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/ShareStyles */ "./components/styles/ShareStyles.js");
 var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Share.js";
+
 
 
 
 var Share = function Share(props) {
   if (props.woman) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_ShareStyles__WEBPACK_IMPORTED_MODULE_1__["ShareContainer"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_ShareStyles__WEBPACK_IMPORTED_MODULE_2__["ShareContainer"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 8
       },
       __self: this
-    }, "Thanks for adding ", props.woman.name, " to the list! Share it with her:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      href: "https://www.northkingdom.com/".concat(props.woman.id),
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      },
+      __self: this
+    }, "Thanks for adding ", props.woman.name, " to the list!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      href: "#".concat(props.woman.id),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
       },
       __self: this
-    }, "https://www.northkingdom.com/".concat(props.woman.id)));
+    }, "Share it with her")));
   } else {
     return null;
   }
@@ -578,11 +587,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var ALL_WOMEN_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
 var Center = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "Women__Center",
-  componentId: "da9jec-0"
+  componentId: "sc-188374r-0"
 })(["position:fixed;width:100vw;height:100vh;perspective:150px;top:0;left:0;"]);
 var ManifestoWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].button.withConfig({
   displayName: "Women__ManifestoWrapper",
-  componentId: "da9jec-1"
+  componentId: "sc-188374r-1"
 })(["width:100vw;height:100vh;background:rgba(0,0,0,0.8);display:", ";justify-content:center;align-items:center;position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;.module{width:70%;height:70%;color:white;background:black;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:50px;margin:0 auto;}h1{color:", ";}"], function (props) {
   return props.display ? "block" : "none";
 }, function (props) {
@@ -598,12 +607,9 @@ var calcX = function calcX(x) {
 
       if (x === 0) {
         newX = x + 0.001;
-      }
+      } // console.log({ x, newX });
 
-      console.log({
-        x: x,
-        newX: newX
-      });
+
       var center = window.innerWidth / 2;
       var distFromCenter = newX - center;
       var decimal = distFromCenter / center;
@@ -851,14 +857,11 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_onScroll", function (e) {
-      console.log("on scroll called");
       var bodyScrollTop = window.pageYOffset;
 
       _this.setState({
         scrollTop: bodyScrollTop
       });
-
-      console.log(bodyScrollTop, document.body.scrollTop, _this.state.scrollTop);
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_throttleScroll", lodash__WEBPACK_IMPORTED_MODULE_2__["throttle"](_this._onScroll, 100));
@@ -872,15 +875,18 @@ function (_Component) {
       Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setBodyHeight"])();
       document.addEventListener("scroll", this._throttleScroll);
       window.addEventListener("resize", _helpers__WEBPACK_IMPORTED_MODULE_5__["setBodyHeight"]);
+      this.setState({
+        scrollTop: window.pageYOffset
+      });
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevProps.women.length !== this.props.women.length) {
         Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setBodyHeight"])();
-        console.log("a new woman has been added to the list.");
         console.log(this.props.women[this.props.women.length - 1]);
-        var newElId = document.getElementById("womanList").lastChild.id;
+        var newElId = document.getElementById("womanList").querySelector(".hidden").lastChild.id;
+        console.log(document.getElementById("womanList").lastChild);
         var newlyAddedItem = {
           name: this.props.women[this.props.women.length - 1].name,
           id: newElId
@@ -912,23 +918,39 @@ function (_Component) {
     key: "render",
     value: function render() {
       if (this.props.women) {
-        var allWomen = this.props.women.map(function (woman, index) {
-          //  TODO: clean up ids - how to deal with duplicates?
-          var personId = woman.name.replace(/[^a-zA-Z ]/g, "").split(" ").join("") + index; // console.log(personId);
-
+        var womenWithId = this.props.women.map(function (woman, index) {
+          var personId = woman.name.replace(/[^a-zA-Z ]/g, "").split(" ").join("") + index;
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            id: personId,
-            className: "womanItem",
-            key: woman.id + index,
+            "data-nameId": personId,
+            className: "womanItem ".concat(personId),
+            key: woman.id + personId + index,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 72
+              lineNumber: 70
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 73
+              lineNumber: 75
+            },
+            __self: this
+          }, woman.name));
+        });
+        var allWomen = this.props.women.map(function (woman, index) {
+          var personId = woman.name.replace(/[^a-zA-Z ]/g, "").split(" ").join("") + index;
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "womanItem ".concat(personId),
+            key: woman.id + index,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 88
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 89
             },
             __self: this
           }, woman.name));
@@ -936,26 +958,33 @@ function (_Component) {
         var containers = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79
+            lineNumber: 95
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["WomenListWrap"], {
           style: {
-            transform: "rotateY(".concat(this.props.x * 2, "deg)")
+            transform: "rotateY(".concat(this.props.x, "deg)")
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 96
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
           style: {
             transformOrigin: "bottom center",
-            transform: "matrix3d(\n                1,\n                0,\n                0,\n                0,\n                0,\n                ".concat(this.props.matrix3DVal2, ",\n                ").concat(this.props.matrix3DVal1, ",\n                0,\n                0,\n                ").concat(this.props.matrix3DVal1 * -1, ",\n                ").concat(this.props.matrix3DVal2, ",\n                0,\n                0,\n                0,\n                0,\n                1\n              )")
+            transform: "matrix3d(\n                  1,\n                  0,\n                  0,\n                  0,\n                  0,\n                  ".concat(this.props.matrix3DVal2, ",\n                  ").concat(this.props.matrix3DVal1, ",\n                  0,\n                  0,\n                  ").concat(this.props.matrix3DVal1 * -1, ",\n                  ").concat(this.props.matrix3DVal2, ",\n                  0,\n                  0,\n                  0,\n                  0,\n                  1\n                )")
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85
+            lineNumber: 101
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hidden",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 124
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -963,42 +992,68 @@ function (_Component) {
           style: {
             transform: "translate3d(0px, -".concat(this.state.scrollTop, "px, 0px)")
           },
-          id: "womanList",
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108
+            lineNumber: 125
           },
           __self: this
-        }, allWomen)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 119
+            lineNumber: 134
+          },
+          __self: this
+        }, allWomen)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 138
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hidden",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 139
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
+          id: "womanList",
           style: {
-            position: "relative",
-            zIndex: "10",
+            // position: `relative`,
+            // zIndex: `10`,
             transform: "translate3d(0px, -".concat(this.state.scrollTop, "px, 0px)")
           },
           order: 1,
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 140
           },
           __self: this
-        }, allWomen)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"] // transform: matrix3d(1, 0, 0, 0, 0, 0.740218, -0.672367, 0, 0, 0.672367, 0.740218, 0, 0, 0, 0, 1);
-        , {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hidden",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 152
+          },
+          __self: this
+        }, womenWithId)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
           style: {
-            //   transform: `rotateX(${this.props.y * -1}deg)`
             transformOrigin: "top center",
             transform: "matrix3d(\n                  1,\n                  0,\n                  0,\n                  0,\n                  0,\n                  ".concat(this.props.matrix3DVal2, ",\n                  ").concat(this.props.matrix3DVal1, ",\n                  0,\n                  0,\n                  ").concat(this.props.matrix3DVal1 * -1, ",\n                  ").concat(this.props.matrix3DVal2, ",\n                  0,\n                  0,\n                  0,\n                  0,\n                  1\n                )")
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 132
+            lineNumber: 156
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hidden",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 179
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -1009,14 +1064,14 @@ function (_Component) {
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 158
+            lineNumber: 180
           },
           __self: this
-        }, allWomen))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Share__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }, allWomen)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Share__WEBPACK_IMPORTED_MODULE_4__["default"], {
           woman: this.state.newlyAddedItem,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 169
+            lineNumber: 194
           },
           __self: this
         }));
@@ -1058,7 +1113,6 @@ var setBodyHeight = function setBodyHeight() {
       // calculate half of window height and add to women's list
 
       var halfHeight = window.innerHeight / 2.5;
-      console.log("set body height is running, woman list height is ".concat(womanListHeight, ", window offset is ").concat(window.pageYOffset));
       document.body.style.height = womanListHeight + halfHeight + "px";
     }
   }
@@ -1188,16 +1242,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var WomenListWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "WomenList__WomenListWrap",
-  componentId: "sc-18a2oqn-0"
-})(["position:fixed;top:0;left:0;width:80vw;left:10vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;}.womanItem{width:100%;background:transparent;display:flex;justify-content:center;align-items:center;-webkit-transform:translate3d(0,0,0);h1{color:blue;text-transform:uppercase;font-size:6vw;font-weight:900;text-align:center;width:100%;max-width:max-content;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;}}"]);
+  componentId: "sc-3l0rl8-0"
+})(["position:fixed;top:0;left:0;width:80vw;left:10vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;}.womanItem{width:100%;background:transparent;display:flex;justify-content:center;align-items:center;-webkit-transform:translate3d(0,0,0);h1{color:blue;text-transform:uppercase;font-size:6vw;font-weight:900;text-align:center;width:100%;max-width:max-content;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;}}"]);
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "WomenList__Container",
-  componentId: "sc-18a2oqn-1"
-})(["height:calc(100vh / 3);overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;background:black;position:relative;&:before{content:\"\";position:absolute;top:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:-o-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:linear-gradient( to bottom,rgba(0,0,0,0.8),rgba(17,17,17,0) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}&:after{content:\"\";position:absolute;bottom:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:-o-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:linear-gradient( to bottom,rgba(17,17,17,0),rgba(0,0,0,0.8) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}"]);
+  componentId: "sc-3l0rl8-1"
+})(["height:calc(100vh / 3);overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;outline:2px solid red;background:black;position:relative;&:before{content:\"\";position:absolute;top:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:-o-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:linear-gradient( to bottom,rgba(0,0,0,0.8),rgba(17,17,17,0) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}&:after{content:\"\";position:absolute;bottom:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:-o-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:linear-gradient( to bottom,rgba(17,17,17,0),rgba(0,0,0,0.8) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}"]);
 var InnerWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "WomenList__InnerWrap",
-  componentId: "sc-18a2oqn-2"
-})(["margin-top:", ";"], function (props) {
+  componentId: "sc-3l0rl8-2"
+})(["overflow:hidden;position:relative;margin-top:", ";"], function (props) {
   return props.order ? "calc((-100vh / 3) * ".concat(props.order, ");") : "0";
 });
 

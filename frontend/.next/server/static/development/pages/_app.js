@@ -423,7 +423,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');\n\n\n  @font-face {\n    font-family: 'radnika_next';\n    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');\n    font-weight: normal;\n    font-style: normal;\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n    height: 100%;\n    overflow: auto;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'Rubik Mono One', sans-serif;\n    background: darkgrey;\n    height: 10000px;\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');\n\n\n  @font-face {\n    font-family: 'radnika_next';\n    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');\n    font-weight: normal;\n    font-style: normal;\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n    height: 100%;\n    overflow: auto;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'Rubik Mono One', sans-serif;\n    background: darkgrey;\n    height: 10000px;\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n  .highlighted {\n    h1{\n      color: hotpink !important;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -450,13 +450,13 @@ var theme = {
 };
 var StyledPage = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Page__StyledPage",
-  componentId: "sc-4u7a64-0"
+  componentId: "sc-8m30q6-0"
 })(["color:", ";"], function (props) {
   return props.theme.black;
 });
 var Inner = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Page__Inner",
-  componentId: "sc-4u7a64-1"
+  componentId: "sc-8m30q6-1"
 })(["margin:0 auto;"]);
 Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["injectGlobal"])(_templateObject(), theme.black);
 
@@ -478,25 +478,25 @@ function (_Component) {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 67
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledPage, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Meta__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 69
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Inner, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 71
         },
         __self: this
       }, this.props.children)));
@@ -538,15 +538,17 @@ var NavStyles = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.with
 /*!*******************!*\
   !*** ./config.js ***!
   \*******************/
-/*! exports provided: endpoint, perPage */
+/*! exports provided: endpoint, prodEndpoint, perPage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prodEndpoint", function() { return prodEndpoint; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "perPage", function() { return perPage; });
 // This is client side config only - don't put anything in here that shouldn't be public!
 var endpoint = "http://localhost:4444";
+var prodEndpoint = "https://womxn-prod.herokuapp.com/";
 var perPage = 4;
 
 /***/ }),
@@ -654,20 +656,47 @@ function (_App) {
   _createClass(MyApp, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // if ("scrollRestoration" in history) {
-      //   history.scrollRestoration = "manual";
-      // }
-      console.log("yo");
-      console.log("should be setting scroll to 00");
-      console.log(window.pageYOffset);
-      window && (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" && window.scrollTo && typeof window.scrollTo === "function" && window.scrollTo(0, 0);
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
 
       if (typeof window === "undefined") {
         return 0;
       } else if (typeof window != "undefined") {
-        //   window.scrollTo(0, 0);
-        console.log(window.pageYOffset);
         console.log(window.location);
+        var hash = window.location.hash;
+        console.log({
+          hash: hash
+        });
+
+        if (hash !== "") {
+          var id = hash.substr(1);
+          var elScrollHeight = document.querySelector("[data-nameId=\"".concat(id, "\"]")).offsetTop;
+          var halfHeight = window.innerHeight / 2.5;
+          var newHeight = elScrollHeight - halfHeight;
+          console.log(document.querySelectorAll(".".concat(id)));
+          document.querySelectorAll(".".concat(id)).forEach(function (el) {
+            console.log(el);
+            el.classList.add("highlighted");
+          });
+          console.log({
+            elScrollHeight: elScrollHeight,
+            newHeight: newHeight,
+            halfHeight: halfHeight
+          });
+          console.log(window.pageYOffset);
+
+          if (elScrollHeight) {
+            window.scrollTo(0, elScrollHeight);
+            window.scrollTo({
+              top: newHeight,
+              left: 0,
+              behavior: "smooth"
+            });
+          }
+        } else {
+          window && (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" && window.scrollTo && typeof window.scrollTo === "function" && window.scrollTo(0, 0);
+        }
       }
     }
   }, {
@@ -680,26 +709,26 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_4__["ApolloProvider"], {
         client: apollo,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 69
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 70
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 71
         },
         __self: this
       })))));

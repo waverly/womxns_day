@@ -15,6 +15,10 @@ export const WomenListWrap = styled.div`
   perspective: 200px;
   /* overflow: hidden; */
 
+  .hidden {
+    overflow: hidden;
+  }
+
   .womenWrapper {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -22,6 +26,8 @@ export const WomenListWrap = styled.div`
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     padding-bottom: 5%;
+    position: absolute;
+    top: 0;
   }
 
   .womanItem {
@@ -54,7 +60,7 @@ export const Container = styled.div`
   overflow: hidden;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  /* outline: 2px solid red; */
+  outline: 2px solid red;
   background: black;
   position: relative;
   &:before {
@@ -129,6 +135,8 @@ export const Container = styled.div`
 `;
 
 export const InnerWrap = styled.div`
+  overflow: hidden;
+  position: relative;
   margin-top: ${props =>
     props.order ? `calc((-100vh / 3) * ${props.order});` : "0"};
 `;

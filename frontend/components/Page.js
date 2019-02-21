@@ -54,6 +54,11 @@ injectGlobal`
     text-decoration: none;
     color: ${theme.black};
   }
+  .highlighted {
+    h1{
+      color: hotpink !important;
+    }
+  }
 `;
 
 class Page extends Component {

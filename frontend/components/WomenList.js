@@ -15,15 +15,18 @@ class WomenList extends Component {
     setBodyHeight();
     document.addEventListener("scroll", this._throttleScroll);
     window.addEventListener("resize", setBodyHeight);
+    this.setState({ scrollTop: window.pageYOffset });
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.women.length !== this.props.women.length) {
       setBodyHeight();
-      console.log("a new woman has been added to the list.");
       console.log(this.props.women[this.props.women.length - 1]);
 
-      const newElId = document.getElementById("womanList").lastChild.id;
+      const newElId = document
+        .getElementById("womanList")
+        .querySelector(".hidden").lastChild.id;
+      console.log(document.getElementById("womanList").lastChild);
       const newlyAddedItem = {
         name: this.props.women[this.props.women.length - 1].name,
         id: newElId
@@ -49,27 +52,40 @@ class WomenList extends Component {
 
   // This will run the first time setBodyHeight is called.
   _onScroll = e => {
-    console.log("on scroll called");
     const bodyScrollTop = window.pageYOffset;
     this.setState({ scrollTop: bodyScrollTop });
-    console.log(bodyScrollTop, document.body.scrollTop, this.state.scrollTop);
   };
 
   _throttleScroll = _.throttle(this._onScroll, 100);
 
   render() {
     if (this.props.women) {
+      const womenWithId = this.props.women.map((woman, index) => {
+        const personId =
+          woman.name
+            .replace(/[^a-zA-Z ]/g, "")
+            .split(" ")
+            .join("") + index;
+        return (
+          <div
+            data-nameId={personId}
+            className={`womanItem ${personId}`}
+            key={woman.id + personId + index}
+          >
+            <h1>{woman.name}</h1>
+          </div>
+        );
+      });
+
       const allWomen = this.props.women.map((woman, index) => {
-        //  TODO: clean up ids - how to deal with duplicates?
         const personId =
           woman.name
             .replace(/[^a-zA-Z ]/g, "")
             .split(" ")
             .join("") + index;
 
-        // console.log(personId);
         return (
-          <div id={personId} className="womanItem" key={woman.id + index}>
+          <div className={`womanItem ${personId}`} key={woman.id + index}>
             <h1>{woman.name}</h1>
           </div>
         );
@@ -79,61 +95,66 @@ class WomenList extends Component {
         <Fragment>
           <WomenListWrap
             style={{
-              transform: `rotateY(${this.props.x * 2}deg)`
+              transform: `rotateY(${this.props.x}deg)`
             }}
           >
             <Container
               style={{
                 transformOrigin: `bottom center`,
                 transform: `matrix3d(
-                1,
-                0,
-                0,
-                0,
-                0,
-                ${this.props.matrix3DVal2},
-                ${this.props.matrix3DVal1},
-                0,
-                0,
-                ${this.props.matrix3DVal1 * -1},
-                ${this.props.matrix3DVal2},
-                0,
-                0,
-                0,
-                0,
-                1
-              )`
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  ${this.props.matrix3DVal2},
+                  ${this.props.matrix3DVal1},
+                  0,
+                  0,
+                  ${this.props.matrix3DVal1 * -1},
+                  ${this.props.matrix3DVal2},
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                )`
               }}
             >
-              <InnerWrap
-                order={0}
-                style={{
-                  transform: `translate3d(0px, -${this.state.scrollTop}px, 0px)`
-                }}
-                id="womanList"
-                className="womenWrapper"
-              >
-                {allWomen}
-              </InnerWrap>
+              <div className="hidden">
+                <InnerWrap
+                  order={0}
+                  style={{
+                    transform: `translate3d(0px, -${
+                      this.state.scrollTop
+                    }px, 0px)`
+                  }}
+                  className="womenWrapper"
+                >
+                  <div className="hidden">{allWomen}</div>
+                </InnerWrap>
+              </div>
             </Container>
             <Container>
-              <InnerWrap
-                style={{
-                  position: `relative`,
-                  zIndex: `10`,
-                  transform: `translate3d(0px, -${this.state.scrollTop}px, 0px)`
-                }}
-                order={1}
-                className="womenWrapper"
-              >
-                {allWomen}
-              </InnerWrap>
+              <div className="hidden">
+                <InnerWrap
+                  id="womanList"
+                  style={{
+                    // position: `relative`,
+                    // zIndex: `10`,
+                    transform: `translate3d(0px, -${
+                      this.state.scrollTop
+                    }px, 0px)`
+                  }}
+                  order={1}
+                  className="womenWrapper"
+                >
+                  <div className="hidden">{womenWithId}</div>
+                </InnerWrap>
+              </div>
             </Container>
             <Container
-              // transform: matrix3d(1, 0, 0, 0, 0, 0.740218, -0.672367, 0, 0, 0.672367, 0.740218, 0, 0, 0, 0, 1);
               style={{
-                //   transform: `rotateX(${this.props.y * -1}deg)`
-
                 transformOrigin: `top center`,
                 transform: `matrix3d(
                   1,
@@ -155,15 +176,19 @@ class WomenList extends Component {
                 )`
               }}
             >
-              <InnerWrap
-                style={{
-                  transform: `translate3d(0px, -${this.state.scrollTop}px, 0px)`
-                }}
-                order={2}
-                className="womenWrapper"
-              >
-                {allWomen}
-              </InnerWrap>
+              <div className="hidden">
+                <InnerWrap
+                  style={{
+                    transform: `translate3d(0px, -${
+                      this.state.scrollTop
+                    }px, 0px)`
+                  }}
+                  order={2}
+                  className="womenWrapper"
+                >
+                  {allWomen}
+                </InnerWrap>
+              </div>
             </Container>
           </WomenListWrap>
           <Share woman={this.state.newlyAddedItem} />

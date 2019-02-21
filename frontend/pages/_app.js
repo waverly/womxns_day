@@ -15,25 +15,49 @@ class MyApp extends App {
   }
 
   componentDidMount() {
-    // if ("scrollRestoration" in history) {
-    //   history.scrollRestoration = "manual";
-    // }
-
-    console.log("yo");
-    console.log("should be setting scroll to 00");
-    console.log(window.pageYOffset);
-    window &&
-      typeof window === "object" &&
-      window.scrollTo &&
-      typeof window.scrollTo === "function" &&
-      window.scrollTo(0, 0);
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
 
     if (typeof window === "undefined") {
       return 0;
     } else if (typeof window != "undefined") {
-      //   window.scrollTo(0, 0);
-      console.log(window.pageYOffset);
       console.log(window.location);
+      const hash = window.location.hash;
+      console.log({ hash });
+      if (hash !== "") {
+        const id = hash.substr(1);
+
+        const elScrollHeight = document.querySelector(`[data-nameId="${id}"]`)
+          .offsetTop;
+        const halfHeight = window.innerHeight / 2.5;
+        const newHeight = elScrollHeight - halfHeight;
+
+        console.log(document.querySelectorAll(`.${id}`));
+        document.querySelectorAll(`.${id}`).forEach(el => {
+          console.log(el);
+          el.classList.add("highlighted");
+        });
+
+        console.log({ elScrollHeight, newHeight, halfHeight });
+
+        console.log(window.pageYOffset);
+
+        if (elScrollHeight) {
+          window.scrollTo(0, elScrollHeight);
+          window.scrollTo({
+            top: newHeight,
+            left: 0,
+            behavior: "smooth"
+          });
+        }
+      } else {
+        window &&
+          typeof window === "object" &&
+          window.scrollTo &&
+          typeof window.scrollTo === "function" &&
+          window.scrollTo(0, 0);
+      }
     }
   }
 

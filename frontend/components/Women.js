@@ -66,7 +66,7 @@ const calcX = x => {
       if (x === 0) {
         newX = x + 0.001;
       }
-      console.log({ x, newX });
+      // console.log({ x, newX });
       const center = window.innerWidth / 2;
       const distFromCenter = newX - center;
 
