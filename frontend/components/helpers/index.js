@@ -7,7 +7,6 @@ export const setBodyHeight = () => {
       // TODO: adjust bottom padding for responsive
       // calculate half of window height and add to women's list
       const halfHeight = window.innerHeight / 1.5;
-      console.log({ womanListHeight, halfHeight });
       document.body.style.height =
         womanListHeight + womanListHeight * 0.1 + "px";
     }

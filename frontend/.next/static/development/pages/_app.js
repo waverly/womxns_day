@@ -328,7 +328,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');\n\n\n  @font-face {\n    font-family: 'radnika_next';\n    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');\n    font-weight: normal;\n    font-style: normal;\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n    height: 100%;\n    overflow: auto;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'Rubik Mono One', sans-serif;\n    background: darkgrey;\n    height: 10000px;\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n  .highlighted {\n    h1{\n      color: hotpink !important;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');\n\n\n  @font-face {\n    font-family: 'radnika_next';\n    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');\n    font-weight: normal;\n    font-style: normal;\n  }\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n    height: 100%;\n    overflow: auto;\n    background: rgb(0,0,0); /* Old browsers */\n    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(66,66,66,1) 49%, rgba(0,0,0,1) 100%, rgba(125,185,232,1) 100%); /* FF3.6-15 */\n    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(66,66,66,1) 49%,rgba(0,0,0,1) 100%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(66,66,66,1) 49%,rgba(0,0,0,1) 100%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */\n\n    background: #0A0A0A;\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'Rubik Mono One', sans-serif;\n    background: transparent;\n    height: 10000px;\n\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n  .highlighted {\n    h1{\n      color: hotpink !important;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -383,25 +383,25 @@ function (_Component) {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 75
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledPage, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 76
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Meta__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 77
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Inner, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 79
         },
         __self: this
       }, this.props.children)));
@@ -49124,8 +49124,8 @@ function (_App) {
           if (elScrollHeight) {
             window.scrollTo({
               top: totalScrollHeight,
-              left: 0,
-              behavior: "smooth"
+              left: 0 // behavior: "smooth"
+
             });
           }
         } else {

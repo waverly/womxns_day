@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import Router from "next/router";
-import Form from "./styles/Form";
+import Form, { Button } from "./styles/Form";
 import Error from "./ErrorMessage";
 import { ALL_WOMEN_QUERY } from "./Women";
 import { setBodyHeight } from "./helpers";
@@ -18,7 +18,7 @@ const CREATE_WOMAN_MUTATION = gql`
 
 class CreateWoman extends Component {
   state = {
-    name: "Name Here"
+    name: ""
   };
   handleChange = e => {
     const { name, type, value } = e.target;
@@ -33,6 +33,9 @@ class CreateWoman extends Component {
             onSubmit={async e => {
               // Stop the form from submitting
               e.preventDefault();
+
+              console.log(e);
+
               // call the mutation
               const res = await createWoman({
                 refetchQueries: [
@@ -43,9 +46,8 @@ class CreateWoman extends Component {
               });
               // change them to the single item page
               console.log(res);
-              // set height of body again based on new item added
-
-              this.setState({ name: "Name Goes Here" });
+              this.props.onBlur();
+              this.setState({ name: "" });
             }}
           >
             <Error error={error} />
@@ -54,16 +56,20 @@ class CreateWoman extends Component {
                 <label htmlFor="title">
                   Name
                   <input
+                    onFocus={this.props.onFocus}
+                    onBlur={this.props.onBlur}
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Name Goes Here"
+                    placeholder="Placeholder"
                     required
                     value={this.state.name}
                     onChange={this.handleChange}
                   />
                 </label>
-                <button type="submit">Submit</button>
+                <Button display={this.state.name.length > 0} type="submit">
+                  Submit
+                </Button>
               </div>
             </fieldset>
           </Form>

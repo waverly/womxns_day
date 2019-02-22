@@ -21,7 +21,6 @@ const Form = styled.form`
   width: 100vw;
   left: 0;
   bottom: 0;
-  background: black;
   z-index: 10;
   height: 100px;
 
@@ -36,15 +35,15 @@ const Form = styled.form`
     width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid black;
     color: ${props => props.theme.green};
     font-size: 16px;
+    border: unset;
     &:focus {
       outline: 0;
       border-bottom: 2px solid ${props => props.theme.green};
     }
   }
-  button,
+
   input[type="submit"] {
     width: auto;
     background: transparent;
@@ -60,6 +59,7 @@ const Form = styled.form`
     border-radius: 30%;
     border-collapse: separate;
     display: block;
+    border: unset;
   }
   .wrapper {
     display: flex;
@@ -123,6 +123,24 @@ const Form = styled.form`
       animation: ${loading} 0.5s linear infinite;
     }
   }
+`;
+
+export const Button = styled.button`
+  width: auto;
+  background: transparent;
+  color: ${props => props.theme.green};
+  border: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30%;
+  border-collapse: separate;
+  display: ${props => (props.display ? "block" : "none")};
+  width: 10px;
 `;
 
 export default Form;

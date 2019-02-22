@@ -37,8 +37,8 @@ class MyApp extends App {
         if (elScrollHeight) {
           window.scrollTo({
             top: totalScrollHeight,
-            left: 0,
-            behavior: "smooth"
+            left: 0
+            // behavior: "smooth"
           });
         }
       } else {

@@ -185,7 +185,7 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(CreateWoman)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      name: "Name Here"
+      name: ""
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function (e) {
@@ -230,25 +230,28 @@ function (_Component) {
                   switch (_context.prev = _context.next) {
                     case 0:
                       // Stop the form from submitting
-                      e.preventDefault(); // call the mutation
+                      e.preventDefault();
+                      console.log(e); // call the mutation
 
-                      _context.next = 3;
+                      _context.next = 4;
                       return createWoman({
                         refetchQueries: [{
                           query: _Women__WEBPACK_IMPORTED_MODULE_7__["ALL_WOMEN_QUERY"]
                         }]
                       });
 
-                    case 3:
+                    case 4:
                       res = _context.sent;
                       // change them to the single item page
-                      console.log(res); // set height of body again based on new item added
+                      console.log(res);
+
+                      _this2.props.onBlur();
 
                       _this2.setState({
-                        name: "Name Goes Here"
+                        name: ""
                       });
 
-                    case 6:
+                    case 8:
                     case "end":
                       return _context.stop();
                   }
@@ -269,7 +272,7 @@ function (_Component) {
           error: error,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 53
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -277,41 +280,44 @@ function (_Component) {
           "aria-busy": loading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 54
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "wrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 55
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 56
           },
           __self: this
         }, "Name", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          onFocus: _this2.props.onFocus,
+          onBlur: _this2.props.onBlur,
           type: "text",
           id: "name",
           name: "name",
-          placeholder: "Name Goes Here",
+          placeholder: "Placeholder",
           required: true,
           value: _this2.state.name,
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 58
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+          display: _this2.state.name.length > 0,
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 70
           },
           __self: this
         }, "Submit"))));
@@ -709,7 +715,7 @@ var calcX = function calcX(x) {
       var center = window.innerWidth / 2;
       var distFromCenter = newX - center;
       var decimal = distFromCenter / center;
-      var randVal = Math.floor(decimal * 0.9) + 0.7;
+      var randVal = Math.floor(decimal * 0.95) + 0.6;
       return (newX - window.innerWidth / 2) / 100; // how to only update if x is not 0
     }
   }
@@ -788,7 +794,8 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       x: null,
       y: null,
-      displayManifesto: true
+      displayManifesto: true,
+      formFocused: 0
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_onMouseMove", function (e) {
@@ -806,6 +813,22 @@ function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_onFormFocus", function () {
+      console.log("hi hi hi hi hi in focus");
+
+      _this.setState({
+        formFocused: 1
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_onFormBlur", function () {
+      console.log("hi hi hi hi hi in blur");
+
+      _this.setState({
+        formFocused: 0
+      });
+    });
+
     return _this;
   }
 
@@ -818,7 +841,7 @@ function (_Component) {
         onMouseMove: this._onMouseMove,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 170
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
@@ -826,7 +849,7 @@ function (_Component) {
         refetch: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 192
         },
         __self: this
       }, function (_ref) {
@@ -836,24 +859,25 @@ function (_Component) {
         if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 183
+            lineNumber: 194
           },
           __self: this
         }, "Loading...");
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 184
+            lineNumber: 195
           },
           __self: this
         }, "Error: ", error.message);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 186
+            lineNumber: 197
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          formFocused: _this2.state.formFocused,
           women: data.women,
           x: _this2.state.x,
           y: _this2.state.y,
@@ -861,13 +885,15 @@ function (_Component) {
           matrix3DVal2: _this2.state.matrix3DVal2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 188
+            lineNumber: 199
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CreateWoman__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          onFocus: _this2._onFormFocus,
+          onBlur: _this2._onFormBlur,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 195
+            lineNumber: 207
           },
           __self: this
         }));
@@ -999,8 +1025,8 @@ function (_Component) {
         });
         window.scrollTo({
           top: document.body.scrollHeight,
-          left: 0,
-          behavior: "smooth"
+          left: 0 // behavior: "smooth"
+
         });
       }
     }
@@ -1062,6 +1088,7 @@ function (_Component) {
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["WomenListWrap"], {
+          formFocused: this.props.formFocused,
           style: {
             transform: "rotateY(".concat(this.props.x, "deg)")
           },
@@ -1077,14 +1104,14 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108
+            lineNumber: 109
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131
+            lineNumber: 132
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -1095,27 +1122,27 @@ function (_Component) {
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 132
+            lineNumber: 133
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 141
+            lineNumber: 142
           },
           __self: this
         }, allWomen)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 145
+            lineNumber: 146
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 146
+            lineNumber: 147
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -1129,14 +1156,14 @@ function (_Component) {
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 147
+            lineNumber: 148
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 159
+            lineNumber: 160
           },
           __self: this
         }, womenWithId)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -1146,14 +1173,14 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 163
+            lineNumber: 164
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hidden",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 186
+            lineNumber: 187
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -1164,14 +1191,14 @@ function (_Component) {
           className: "womenWrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 187
+            lineNumber: 188
           },
           __self: this
         }, allWomen)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Share__WEBPACK_IMPORTED_MODULE_4__["default"], {
           woman: this.state.newlyAddedItem,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 201
+            lineNumber: 202
           },
           __self: this
         }));
@@ -1213,10 +1240,6 @@ var setBodyHeight = function setBodyHeight() {
       // calculate half of window height and add to women's list
 
       var halfHeight = window.innerHeight / 1.5;
-      console.log({
-        womanListHeight: womanListHeight,
-        halfHeight: halfHeight
-      });
       document.body.style.height = womanListHeight + womanListHeight * 0.1 + "px";
     }
   }
@@ -1228,25 +1251,34 @@ var setBodyHeight = function setBodyHeight() {
 /*!***********************************!*\
   !*** ./components/styles/Form.js ***!
   \***********************************/
-/*! exports provided: default */
+/*! exports provided: Button, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
 
 var loading = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["keyframes"])(["from{background-position:0 0;}to{background-position:100% 100%;}"]);
 var Form = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.form.withConfig({
   displayName: "Form",
-  componentId: "sc-1xszr8q-0"
-})(["padding:20px;font-size:1.5rem;line-height:1.5;font-weight:600;position:fixed;width:100vw;left:0;bottom:0;background:black;z-index:10;height:100px;label{display:block;margin-bottom:1rem;color:white;}input,textarea,select{width:100%;padding:0.5rem;font-size:1rem;border:1px solid black;color:", ";font-size:16px;&:focus{outline:0;border-bottom:2px solid ", ";}}button,input[type=\"submit\"]{width:auto;background:transparent;color:", ";border:0;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border:2px solid;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border-radius:30%;border-collapse:separate;display:block;}.wrapper{display:flex;flex-direction:row;width:100%;justify-content:space-between;label{width:70%;display:flex;flex-direction:column;align-items:flex-start;color:transparent;}input{width:100%;width:100%;background-color:transparent;border-bottom:2px solid #00ff00;::-webkit-input-placeholder{color:#00ff00;font-size:14px;}::-moz-placeholder{color:#00ff00;font-size:14px;}:-ms-input-placeholder{color:#00ff00;font-size:14px;}:-moz-placeholder{color:#00ff00;font-size:14px;}}button{width:150px;}}fieldset{border:0;padding:0;display:flex;&[disabled]{opacity:0.5;}&[aria-busy=\"true\"]::before{background-size:50% auto;animation:", " 0.5s linear infinite;}}"], function (props) {
+  componentId: "sc-1g9snaq-0"
+})(["padding:20px;font-size:1.5rem;line-height:1.5;font-weight:600;position:fixed;width:100vw;left:0;bottom:0;z-index:10;height:100px;label{display:block;margin-bottom:1rem;color:white;}input,textarea,select{width:100%;padding:0.5rem;font-size:1rem;color:", ";font-size:16px;border:unset;&:focus{outline:0;border-bottom:2px solid ", ";}}input[type=\"submit\"]{width:auto;background:transparent;color:", ";border:0;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border:2px solid;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border-radius:30%;border-collapse:separate;display:block;border:unset;}.wrapper{display:flex;flex-direction:row;width:100%;justify-content:space-between;label{width:70%;display:flex;flex-direction:column;align-items:flex-start;color:transparent;}input{width:100%;width:100%;background-color:transparent;border-bottom:2px solid #00ff00;::-webkit-input-placeholder{color:#00ff00;font-size:14px;}::-moz-placeholder{color:#00ff00;font-size:14px;}:-ms-input-placeholder{color:#00ff00;font-size:14px;}:-moz-placeholder{color:#00ff00;font-size:14px;}}button{width:150px;}}fieldset{border:0;padding:0;display:flex;&[disabled]{opacity:0.5;}&[aria-busy=\"true\"]::before{background-size:50% auto;animation:", " 0.5s linear infinite;}}"], function (props) {
   return props.theme.green;
 }, function (props) {
   return props.theme.green;
 }, function (props) {
   return props.theme.green;
 }, loading);
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
+  displayName: "Form__Button",
+  componentId: "sc-1g9snaq-1"
+})(["width:auto;background:transparent;color:", ";border:0;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border:2px solid;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border-radius:30%;border-collapse:separate;display:", ";width:10px;"], function (props) {
+  return props.theme.green;
+}, function (props) {
+  return props.display ? "block" : "none";
+});
 /* harmony default export */ __webpack_exports__["default"] = (Form);
 
 /***/ }),
@@ -1353,11 +1385,13 @@ __webpack_require__.r(__webpack_exports__);
 var WomenListWrap = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "WomenList__WomenListWrap",
   componentId: "sc-3l0rl8-0"
-})(["position:fixed;top:0;left:0;width:80vw;left:10vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;}.womanItem{width:100%;background:transparent;display:flex;justify-content:center;align-items:center;-webkit-transform:translate3d(0,0,0);h1{color:blue;text-transform:uppercase;font-size:6vw;font-weight:900;text-align:center;width:100%;max-width:max-content;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;line-height:0.8;margin-block-start:2rem;margin-block-end:2rem;text-align:justify;&:hover{color:black;-webkit-text-stroke:2px blue;}}}"]);
+})(["position:fixed;top:0;left:0;width:90vw;left:5vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;transition:0.5s opacity;opacity:", ";.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;}.womanItem{width:100%;background:transparent;display:flex;justify-content:center;align-items:center;-webkit-transform:translate3d(0,0,0);h1{color:rgb(255,255,51);text-transform:uppercase;font-size:6vw;font-weight:900;text-align:center;width:100%;max-width:max-content;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;line-height:0.8;margin-block-start:2rem;margin-block-end:2rem;text-align:justify;&:hover{color:black;-webkit-text-stroke:2px rgb(255,255,51);}}}"], function (props) {
+  return props.formFocused ? ".1" : "1";
+});
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "WomenList__Container",
   componentId: "sc-3l0rl8-1"
-})(["height:calc(100vh / 3);overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent;position:relative;&:before{content:\"\";position:absolute;top:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:-o-linear-gradient( top,rgba(0,0,0,0.8),rgba(17,17,17,0) );background:linear-gradient( to bottom,rgba(0,0,0,0.8),rgba(17,17,17,0) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}&:after{content:\"\";position:absolute;bottom:0;left:0;display:none;width:100%;height:100px;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,0.8)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:-o-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,0.8) );background:linear-gradient( to bottom,rgba(17,17,17,0),rgba(0,0,0,0.8) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}"]);
+})(["height:calc(100vh / 3);overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;background:black;position:relative;&:first-of-type{&:before{content:\"\";position:absolute;top:0;left:0;display:block;width:100%;height:80%;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,1)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(0,0,0,1),rgba(17,17,17,0) );background:-o-linear-gradient( top,rgba(0,0,0,1),rgba(17,17,17,0) );background:linear-gradient( to bottom,rgba(0,0,0,1),rgba(17,17,17,0) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}}&:last-of-type{&:after{content:\"\";position:absolute;bottom:0;left:0;display:block;width:100%;height:80%;background:-webkit-gradient( linear,left top,left bottom,from(rgba(0,0,0,1)),to(rgba(17,17,17,0)) );background:-webkit-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,1) );background:-o-linear-gradient( top,rgba(17,17,17,0),rgba(0,0,0,1) );background:linear-gradient( to bottom,rgba(17,17,17,0),rgba(0,0,0,1) );z-index:20;-webkit-backface-visibility:hidden;backface-visibility:hidden;}}"]);
 var InnerWrap = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "WomenList__InnerWrap",
   componentId: "sc-3l0rl8-2"

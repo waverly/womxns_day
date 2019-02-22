@@ -72,7 +72,7 @@ const calcX = x => {
 
       const decimal = distFromCenter / center;
 
-      const randVal = Math.floor(decimal * 0.9) + 0.7;
+      const randVal = Math.floor(decimal * 0.95) + 0.6;
       return (newX - window.innerWidth / 2) / 100;
 
       // how to only update if x is not 0
@@ -138,7 +138,8 @@ class Women extends Component {
   state = {
     x: null,
     y: null,
-    displayManifesto: true
+    displayManifesto: true,
+    formFocused: 0
   };
 
   _onMouseMove = e => {
@@ -152,6 +153,16 @@ class Women extends Component {
 
   _closeManifesto = () => {
     this.setState({ displayManifesto: false });
+  };
+
+  _onFormFocus = () => {
+    console.log("hi hi hi hi hi in focus");
+    this.setState({ formFocused: 1 });
+  };
+
+  _onFormBlur = () => {
+    console.log("hi hi hi hi hi in blur");
+    this.setState({ formFocused: 0 });
   };
 
   render() {
@@ -186,13 +197,17 @@ class Women extends Component {
               <Fragment>
                 {/* <ThreeWomen women={data.women} /> */}
                 <WomenList
+                  formFocused={this.state.formFocused}
                   women={data.women}
                   x={this.state.x}
                   y={this.state.y}
                   matrix3DVal1={this.state.matrix3DVal1}
                   matrix3DVal2={this.state.matrix3DVal2}
                 />
-                <CreateWoman />
+                <CreateWoman
+                  onFocus={this._onFormFocus}
+                  onBlur={this._onFormBlur}
+                />
               </Fragment>
             );
           }}

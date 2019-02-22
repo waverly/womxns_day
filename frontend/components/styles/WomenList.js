@@ -4,17 +4,14 @@ export const WomenListWrap = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  /* width: 100%;
-  height: 100vh; */
-
-  width: 80vw;
-  left: 10vw;
+  width: 90vw;
+  left: 5vw;
   top: 0vh;
   height: 90vh;
   -webkit-perspective: 200px;
   perspective: 200px;
-  /* overflow: hidden; */
-
+  transition: 0.5s opacity;
+  opacity: ${props => (props.formFocused ? ".1" : "1")};
   .hidden {
     overflow: hidden;
   }
@@ -39,7 +36,7 @@ export const WomenListWrap = styled.div`
     -webkit-transform: translate3d(0, 0, 0);
 
     h1 {
-      color: blue;
+      color: rgb(255, 255, 51);
       text-transform: uppercase;
       font-size: 6vw;
       font-weight: 900;
@@ -58,7 +55,7 @@ export const WomenListWrap = styled.div`
 
       &:hover {
         color: black;
-        -webkit-text-stroke: 2px blue;
+        -webkit-text-stroke: 2px rgb(255, 255, 51);
       }
     }
   }
@@ -70,76 +67,81 @@ export const Container = styled.div`
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* outline: 2px solid red; */
-  background: transparent;
+  background: black;
   position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    width: 100%;
-    height: 100px;
-    background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.8)),
-      to(rgba(17, 17, 17, 0))
-    );
-    background: -webkit-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.8),
-      rgba(17, 17, 17, 0)
-    );
-    background: -o-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.8),
-      rgba(17, 17, 17, 0)
-    );
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(17, 17, 17, 0)
-    );
-    z-index: 20;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+
+  &:first-of-type {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 80%;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 1)),
+        to(rgba(17, 17, 17, 0))
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(0, 0, 0, 1),
+        rgba(17, 17, 17, 0)
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(0, 0, 0, 1),
+        rgba(17, 17, 17, 0)
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1),
+        rgba(17, 17, 17, 0)
+      );
+      z-index: 20;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
   }
 
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: none;
-    width: 100%;
-    height: 100px;
-    background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.8)),
-      to(rgba(17, 17, 17, 0))
-    );
-    background: -webkit-linear-gradient(
-      top,
-      rgba(17, 17, 17, 0),
-      rgba(0, 0, 0, 0.8)
-    );
-    background: -o-linear-gradient(
-      top,
-      rgba(17, 17, 17, 0),
-      rgba(0, 0, 0, 0.8)
-    );
-    background: linear-gradient(
-      to bottom,
-      rgba(17, 17, 17, 0),
-      rgba(0, 0, 0, 0.8)
-    );
-    z-index: 20;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+  &:last-of-type {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 80%;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 1)),
+        to(rgba(17, 17, 17, 0))
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(17, 17, 17, 0),
+        rgba(0, 0, 0, 1)
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(17, 17, 17, 0),
+        rgba(0, 0, 0, 1)
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(17, 17, 17, 0),
+        rgba(0, 0, 0, 1)
+      );
+      z-index: 20;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
   }
 `;
 

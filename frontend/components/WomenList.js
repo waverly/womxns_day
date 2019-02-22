@@ -42,8 +42,8 @@ class WomenList extends Component {
       this.setState({ newlyAddedItem });
       window.scrollTo({
         top: document.body.scrollHeight,
-        left: 0,
-        behavior: "smooth"
+        left: 0
+        // behavior: "smooth"
       });
     }
   }
@@ -101,6 +101,7 @@ class WomenList extends Component {
       const containers = (
         <Fragment>
           <WomenListWrap
+            formFocused={this.props.formFocused}
             style={{
               transform: `rotateY(${this.props.x}deg)`
             }}

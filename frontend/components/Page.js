@@ -37,6 +37,13 @@ injectGlobal`
     font-size: 10px;
     height: 100%;
     overflow: auto;
+    background: rgb(0,0,0); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(66,66,66,1) 49%, rgba(0,0,0,1) 100%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(66,66,66,1) 49%,rgba(0,0,0,1) 100%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(66,66,66,1) 49%,rgba(0,0,0,1) 100%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+    background: #0A0A0A;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -47,8 +54,9 @@ injectGlobal`
     font-size: 1.5rem;
     line-height: 2;
     font-family: 'Rubik Mono One', sans-serif;
-    background: darkgrey;
+    background: transparent;
     height: 10000px;
+
   }
   a {
     text-decoration: none;
