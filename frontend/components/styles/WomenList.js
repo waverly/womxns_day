@@ -25,37 +25,95 @@ export const WomenListWrap = styled.div`
     padding-bottom: 5%;
     position: absolute;
     top: 0;
+    width: 100%;
   }
 
   .womanItem {
     width: 100%;
     background: transparent;
     display: flex;
-    justify-content: center;
     align-items: center;
     -webkit-transform: translate3d(0, 0, 0);
 
+    &:nth-child(3n + 1) {
+      h1 {
+        text-align: left;
+      }
+    }
+    &:nth-child(3n + 2) {
+      h1 {
+        text-align: center;
+      }
+    }
+    &:nth-child(3n + 3) {
+      h1 {
+        text-align: right;
+      }
+    }
+
+    &:nth-child(4n + 1) {
+      h1 {
+        color: ${props => props.theme.teal};
+        -webkit-text-stroke: 2px ${props => props.theme.teal};
+      }
+      &.highlighted {
+        h1 {
+          color: transparent;
+          -webkit-text-stroke: 2px ${props => props.theme.teal};
+        }
+      }
+    }
+    &:nth-child(4n + 2) {
+      h1 {
+        color: ${props => props.theme.pink};
+        -webkit-text-stroke: 2px ${props => props.theme.pink};
+      }
+      &.highlighted {
+        h1 {
+          color: transparent;
+          -webkit-text-stroke: 2px ${props => props.theme.pink};
+        }
+      }
+    }
+    &:nth-child(4n + 3) {
+      h1 {
+        color: ${props => props.theme.gold};
+        -webkit-text-stroke: 2px ${props => props.theme.gold};
+      }
+      &.highlighted {
+        h1 {
+          color: transparent;
+          -webkit-text-stroke: 2px ${props => props.theme.gold};
+        }
+      }
+    }
+    &:nth-child(4n + 4) {
+      h1 {
+        color: ${props => props.theme.maroon};
+        -webkit-text-stroke: 2px ${props => props.theme.maroon};
+      }
+      &.highlighted {
+        h1 {
+          color: transparent;
+          -webkit-text-stroke: 2px ${props => props.theme.maroon};
+        }
+      }
+    }
+
     h1 {
-      color: rgb(255, 255, 51);
       text-transform: uppercase;
-      font-size: 6vw;
-      font-weight: 900;
-      text-align: center;
+      font-size: 14vw;
       width: 100%;
-      max-width: max-content;
       display: block;
       margin-block-start: 10px;
       margin-block-end: 10px;
       height: auto;
       transition: 0.5s all;
-      line-height: 0.8;
-      margin-block-start: 2rem;
-      margin-block-end: 2rem;
-      text-align: justify;
-
+      line-height: 0.7;
+      margin-block-start: 1rem;
+      margin-block-end: 1rem;
       &:hover {
-        color: black;
-        -webkit-text-stroke: 2px rgb(255, 255, 51);
+        color: transparent;
       }
     }
   }
@@ -66,8 +124,7 @@ export const Container = styled.div`
   overflow: hidden;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  /* outline: 2px solid red; */
-  background: black;
+  background: ${props => props.theme.darkerOffWhite};
   position: relative;
 
   &:first-of-type {
@@ -76,29 +133,29 @@ export const Container = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      display: block;
+      display: none;
       width: 100%;
       height: 80%;
       background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        from(rgba(0, 0, 0, 1)),
+        from(${props => props.theme.offWhite}),
         to(rgba(17, 17, 17, 0))
       );
       background: -webkit-linear-gradient(
         top,
-        rgba(0, 0, 0, 1),
+        from(${props => props.theme.offWhite}),
         rgba(17, 17, 17, 0)
       );
       background: -o-linear-gradient(
         top,
-        rgba(0, 0, 0, 1),
+        from(${props => props.theme.offWhite}),
         rgba(17, 17, 17, 0)
       );
       background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 1),
+        from(${props => props.theme.offWhite}),
         rgba(17, 17, 17, 0)
       );
       z-index: 20;
@@ -120,23 +177,23 @@ export const Container = styled.div`
         linear,
         left top,
         left bottom,
-        from(rgba(0, 0, 0, 1)),
+        from(from(${props => props.theme.offWhite})),
         to(rgba(17, 17, 17, 0))
       );
       background: -webkit-linear-gradient(
         top,
         rgba(17, 17, 17, 0),
-        rgba(0, 0, 0, 1)
+        from(${props => props.theme.offWhite})
       );
       background: -o-linear-gradient(
         top,
         rgba(17, 17, 17, 0),
-        rgba(0, 0, 0, 1)
+        from(${props => props.theme.offWhite})
       );
       background: linear-gradient(
         to bottom,
         rgba(17, 17, 17, 0),
-        rgba(0, 0, 0, 1)
+        from(${props => props.theme.offWhite})
       );
       z-index: 20;
       -webkit-backface-visibility: hidden;

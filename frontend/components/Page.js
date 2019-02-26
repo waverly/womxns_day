@@ -9,7 +9,12 @@ const theme = {
   grey: "#3A3A3A",
   green: "#00ff00",
   lightgrey: "#E1E1E1",
-  offWhite: "#EDEDED",
+  darkerOffWhite: "#F7F0E5",
+  offWhite: "#FFF7EC",
+  teal: "#53B8C5",
+  pink: "#E5918A",
+  gold: "#FFC702",
+  maroon: "#A70028",
   maxWidth: "1000px",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
 };
@@ -23,27 +28,12 @@ const Inner = styled.div`
 `;
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');
-
-
-  @font-face {
-    font-family: 'radnika_next';
-    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
   html {
     box-sizing: border-box;
     font-size: 10px;
     height: 100%;
     overflow: auto;
-    background: rgb(0,0,0); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(66,66,66,1) 49%, rgba(0,0,0,1) 100%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(66,66,66,1) 49%,rgba(0,0,0,1) 100%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(66,66,66,1) 49%,rgba(0,0,0,1) 100%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-
-    background: #0A0A0A;
+    background: #FFF7EC;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -53,19 +43,17 @@ injectGlobal`
     margin: 0;
     font-size: 1.5rem;
     line-height: 2;
-    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Khand', sans-serif;
     background: transparent;
-    height: 10000px;
-
+  }
+  p{
+    font-family: 'Khand', sans-serif;
+    font-size: 4vw;
+    line-height: 1;
   }
   a {
     text-decoration: none;
     color: ${theme.black};
-  }
-  .highlighted {
-    h1{
-      color: hotpink !important;
-    }
   }
 `;
 

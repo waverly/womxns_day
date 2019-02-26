@@ -1,8 +1,8 @@
-import Women from "../components/Women";
+import Manifesto from "../components/Manifesto";
 
 const Home = props => (
   <div>
-    <Women />
+    <Manifesto />
   </div>
 );
 

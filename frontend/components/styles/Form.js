@@ -19,10 +19,12 @@ const Form = styled.form`
   font-weight: 600;
   position: fixed;
   width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   left: 0;
   bottom: 0;
-  z-index: 10;
-  height: 100px;
 
   label {
     display: block;
@@ -32,7 +34,6 @@ const Form = styled.form`
   input,
   textarea,
   select {
-    width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
     color: ${props => props.theme.green};
@@ -42,6 +43,15 @@ const Form = styled.form`
       outline: 0;
       border-bottom: 2px solid ${props => props.theme.green};
     }
+  }
+
+  input#name {
+    width: 70vw;
+    border-bottom: 2px solid black;
+    font-size: 4rem;
+    color: black;
+    font-size: 4rem;
+    font-family: "Khand", sans-serif;
   }
 
   input[type="submit"] {
@@ -78,35 +88,35 @@ const Form = styled.form`
       width: 100%;
       width: 100%;
       background-color: transparent;
-      border-bottom: 2px solid #00ff00;
 
       /* placeholder text */
 
       ::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
-        color: #00ff00;
-        font-size: 14px;
+        color: black;
+        font-size: 4rem;
+        font-family: "Khand", sans-serif;
       }
       ::-moz-placeholder {
         /* Firefox 19+ */
-        color: #00ff00;
-        font-size: 14px;
+        color: black;
+        font-size: 4rem;
+        font-family: "Khand", sans-serif;
       }
       :-ms-input-placeholder {
         /* IE 10+ */
-        color: #00ff00;
-        font-size: 14px;
+        color: black;
+        font-size: 4rem;
+        font-family: "Khand", sans-serif;
       }
       :-moz-placeholder {
         /* Firefox 18- */
-        color: #00ff00;
-        font-size: 14px;
+        color: black;
+        font-size: 4rem;
+        font-family: "Khand", sans-serif;
       }
 
       /* end placeholder text */
-    }
-    button {
-      width: 150px;
     }
   }
   fieldset {
@@ -128,19 +138,31 @@ const Form = styled.form`
 export const Button = styled.button`
   width: auto;
   background: transparent;
-  color: ${props => props.theme.green};
   border: 0;
   font-size: 2rem;
   font-weight: 600;
   padding: 0.5rem 1.2rem;
-  border: 2px solid;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
   padding: 0.5rem 1.2rem;
   border-radius: 30%;
   border-collapse: separate;
   display: ${props => (props.display ? "block" : "none")};
-  width: 10px;
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  &:focus {
+    outline: unset;
+  }
+  span {
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-family: "Khand", sans-serif;
+  }
+  svg {
+    height: 20px;
+  }
 `;
 
 export default Form;

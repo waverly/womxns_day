@@ -8,7 +8,17 @@ export const setBodyHeight = () => {
       // calculate half of window height and add to women's list
       const halfHeight = window.innerHeight / 1.5;
       document.body.style.height =
-        womanListHeight + womanListHeight * 0.1 + "px";
+        womanListHeight + womanListHeight * 0.05 + "px";
     }
   }
+};
+
+export const genId = name => {
+  const id = name
+    .replace(/[^a-zA-Z ]/g, "")
+    .split(" ")
+    .join("")
+    .toLowerCase();
+
+  return id;
 };

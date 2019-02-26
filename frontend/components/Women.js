@@ -2,10 +2,8 @@ import React, { Component, Fragment } from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import styled from "styled-components";
-import Woman from "./Woman";
-import CreateWoman from "./CreateWoman";
+import Nav from "./Nav";
 import WomenList from "./WomenList";
-import { Manifesto } from "./Manifesto";
 
 const ALL_WOMEN_QUERY = gql`
   query ALL_WOMEN_QUERY {
@@ -66,16 +64,11 @@ const calcX = x => {
       if (x === 0) {
         newX = x + 0.001;
       }
-      // console.log({ x, newX });
       const center = window.innerWidth / 2;
       const distFromCenter = newX - center;
-
       const decimal = distFromCenter / center;
-
       const randVal = Math.floor(decimal * 0.95) + 0.6;
       return (newX - window.innerWidth / 2) / 100;
-
-      // how to only update if x is not 0
     }
   }
 };
@@ -167,52 +160,29 @@ class Women extends Component {
 
   render() {
     return (
-      <Center onMouseMove={this._onMouseMove}>
-        {/* <ManifestoWrapper
-          display={this.state.displayManifesto}
-          onClick={this._closeManifesto}
-        >
-          <div className="module">
-            <h1>
-              <em>Today is International Woman's Day.</em>
-            </h1>
-            <p>
-              Why is this day important? Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
-            </p>
-          </div>
-        </ManifestoWrapper> */}
-
-        <Query query={ALL_WOMEN_QUERY} refetch={true}>
-          {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
-            if (error) return <p>Error: {error.message}</p>;
-            return (
-              <Fragment>
-                {/* <ThreeWomen women={data.women} /> */}
-                <WomenList
-                  formFocused={this.state.formFocused}
-                  women={data.women}
-                  x={this.state.x}
-                  y={this.state.y}
-                  matrix3DVal1={this.state.matrix3DVal1}
-                  matrix3DVal2={this.state.matrix3DVal2}
-                />
-                <CreateWoman
-                  onFocus={this._onFormFocus}
-                  onBlur={this._onFormBlur}
-                />
-              </Fragment>
-            );
-          }}
-        </Query>
-      </Center>
+      <Fragment>
+        <Nav />
+        <Center onMouseMove={this._onMouseMove}>
+          <Query query={ALL_WOMEN_QUERY} refetch={true}>
+            {({ data, error, loading }) => {
+              if (loading) return null;
+              if (error) return <p>Error: {error.message}</p>;
+              return (
+                <Fragment>
+                  <WomenList
+                    formFocused={this.state.formFocused}
+                    women={data.women}
+                    x={this.state.x}
+                    y={this.state.y}
+                    matrix3DVal1={this.state.matrix3DVal1}
+                    matrix3DVal2={this.state.matrix3DVal2}
+                  />
+                </Fragment>
+              );
+            }}
+          </Query>
+        </Center>
+      </Fragment>
     );
   }
 }

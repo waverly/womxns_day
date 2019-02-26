@@ -5604,7 +5604,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/waverly/Documents/Development/womxn/womxnPrototype/ssr_test-master/frontend/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/.next");
       return error;
     }
   };
