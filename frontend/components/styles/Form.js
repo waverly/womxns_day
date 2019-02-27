@@ -26,6 +26,12 @@ const Form = styled.form`
   left: 0;
   bottom: 0;
 
+  .close {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+
   label {
     display: block;
     margin-bottom: 1rem;
@@ -147,7 +153,7 @@ export const Button = styled.button`
   padding: 0.5rem 1.2rem;
   border-radius: 30%;
   border-collapse: separate;
-  display: ${props => (props.display ? "block" : "none")};
+  display: ${props => (props.willdisplay ? "block" : "none")};
   display: block;
   position: fixed;
   bottom: 10px;

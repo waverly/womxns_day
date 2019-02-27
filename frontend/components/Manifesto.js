@@ -53,7 +53,7 @@ const Manifesto = () => (
             anim id est laborum.
           </p>
         </div>
-        <p className="click-to-enter">Click to enter</p>
+        <p className="click-to-enter">Click to start</p>
       </ManifestoWrapper>
     </a>
   </Link>

@@ -35,6 +35,13 @@ injectGlobal`
     overflow: auto;
     background: #FFF7EC;
   }
+
+  .display-none{
+    /* display: none!important; */
+    opacity: 0;
+    visibility: hidden;
+  }
+
   *, *:before, *:after {
     box-sizing: inherit;
   }

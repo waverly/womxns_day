@@ -16,14 +16,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-apollo */ "./node_modules/react-apollo/react-apollo.browser.umd.js");
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
-/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
-/* harmony import */ var _Women__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Women */ "./components/Women.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
+/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
+/* harmony import */ var _Women__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Women */ "./components/Women.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
 
 var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/CreateWoman.js";
 
@@ -71,7 +73,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var CREATE_WOMAN_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
+
+var CREATE_WOMAN_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject());
 
 var CreateWoman =
 /*#__PURE__*/
@@ -114,18 +117,24 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Mutation"], {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Mutation"], {
         mutation: CREATE_WOMAN_MUTATION,
         variables: this.state,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 32
         },
         __self: this
       }, function (createWoman, _ref) {
         var loading = _ref.loading,
             error = _ref.error;
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_6__["default"], {
           onSubmit:
           /*#__PURE__*/
           function () {
@@ -142,14 +151,14 @@ function (_Component) {
                       _context.next = 3;
                       return createWoman({
                         refetchQueries: [{
-                          query: _Women__WEBPACK_IMPORTED_MODULE_7__["ALL_WOMEN_QUERY"]
+                          query: _Women__WEBPACK_IMPORTED_MODULE_8__["ALL_WOMEN_QUERY"]
                         }]
                       });
 
                     case 3:
                       res = _context.sent;
-                      id = Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["genId"])(_this2.state.name);
-                      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/names#".concat(id)); // this.setState({ name: "" });
+                      id = Object(_helpers__WEBPACK_IMPORTED_MODULE_9__["genId"])(_this2.state.name);
+                      next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/names#".concat(id)); // this.setState({ name: "" });
 
                     case 6:
                     case "end":
@@ -165,14 +174,47 @@ function (_Component) {
           }(),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 34
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          href: "/names",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("svg", {
+          className: "close",
+          width: "31",
+          height: "31",
+          viewBox: "0 0 31 31",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
+          d: "M9.20022 24.7566L5.6216 21.178L11.5109 15.2887L5.88929 9.6671L9.66706 5.88934L15.2887 11.5109L21.1779 5.62164L24.7566 9.20027L18.8673 15.0896L24.5163 20.7386L20.7385 24.5163L15.0895 18.8673L9.20022 24.7566Z",
+          fill: "black",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61
+          },
+          __self: this
+        })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
           error: error,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 68
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -180,21 +222,21 @@ function (_Component) {
           "aria-busy": loading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 69
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "wrapper",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 70
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
           htmlFor: "title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 71
           },
           __self: this
         }, "Name", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -203,27 +245,27 @@ function (_Component) {
           type: "text",
           id: "name",
           name: "name",
-          placeholder: "Placeholder",
+          placeholder: "...",
           required: true,
           value: _this2.state.name,
           onChange: _this2.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 73
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_5__["Button"], {
-          display: _this2.state.name.length > 0,
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+          willdisplay: _this2.state.name.length > 0,
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 85
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 89
           },
           __self: this
         }, "Submit"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("svg", {
@@ -234,7 +276,7 @@ function (_Component) {
           xmlns: "http://www.w3.org/2000/svg",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 90
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
@@ -242,11 +284,11 @@ function (_Component) {
           fill: "black",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 97
           },
           __self: this
         }))))));
-      });
+      }));
     }
   }]);
 
@@ -745,8 +787,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       scrollTop: 0,
-      newlyAddedItem: null,
-      scrollUpdatedOnLoad: false
+      newlyAddedItem: null
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "allWomen", null);
@@ -754,89 +795,129 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "womenWithId", null);
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_scrollToHash", function () {
-      console.log("inside scrolltohash");
+      console.log("scroll to hash fx");
 
-      if (!_this.state.scrollUpdatedOnLoad) {
-        console.log("inside scroll to hash");
+      if (typeof window === "undefined") {
+        return 0;
+      } else {
+        var hash = window.location.hash;
 
-        if (typeof window === "undefined") {
-          return 0;
-        } else if (typeof window != "undefined") {
-          var hash = window.location.hash;
-          console.log({
-            hash: hash
-          });
+        if (hash !== "") {
+          var id = hash.substr(1);
+          var womenWrapper = document.getElementById("womanList");
+          var scrollEl = document.querySelector("[data-nameid=".concat(id, "]"));
+          console.log(womenWrapper);
+          console.log(scrollEl);
+          console.log(womenWrapper); // setTimeout(() => {
+          //   const timeoutscrollel = document.querySelector(
+          //     `[data-nameid="jenny"]`
+          //   );
+          //   console.log(timeoutscrollel);
+          // }, 500);
+          // debugger;
 
-          if (hash !== "") {
-            var id = hash.substr(1);
-            var elScrollHeight;
-            elScrollHeight = document.querySelector("[data-nameid=".concat(id, "]")).offsetTop;
+          if (scrollEl) {
+            var elScrollHeight = scrollEl.offsetTop;
+            console.log(womenWrapper);
+            console.log(scrollEl);
             console.log(elScrollHeight);
+            console.log(womenWrapper.lastChild.lastChild);
             var halfHeight = window.innerHeight / 2.5;
             var totalScrollHeight = elScrollHeight - halfHeight;
             document.querySelectorAll(".".concat(id)).forEach(function (el) {
               el.classList.add("highlighted");
             });
+            window.scrollTo({
+              top: totalScrollHeight,
+              left: 0 // behavior: "smooth"
 
-            if (elScrollHeight) {
-              window.scrollTo({
-                top: totalScrollHeight,
-                left: 0 // behavior: "smooth"
-
-              });
-            }
+            });
+          } else {
+            window && (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" && window.scrollTo && typeof window.scrollTo === "function" && window.scrollTo(0, 0);
           }
-        } else {
-          console.log("in else");
-          window && (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" && window.scrollTo && typeof window.scrollTo === "function" && window.scrollTo(0, 0);
         }
-
-        _this.setState({
-          scrollUpdatedOnLoad: true
-        });
       }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_calcWomenList", function () {
       if (_this.props.women) {
+        console.log("running calc women list");
         _this.womenWithId = _this.props.women.map(function (woman, index) {
           var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["genId"])(woman.name);
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             "data-nameid": personId,
             className: "womanItem ".concat(personId),
             key: woman.id + personId + index,
-            onClick: _this._addHighlightClass,
+            onClick: function onClick(e) {
+              return _this._addHighlightClass(e);
+            },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 64
+              lineNumber: 74
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "inner-relative",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 70
+              lineNumber: 80
             },
             __self: this
-          }, woman.name));
-        });
-        _this.allWomen = _this.props.women.map(function (woman, index) {
-          var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["genId"])(woman.name);
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            onClick: _this._addHighlightClass,
-            className: "womanItem ".concat(personId),
-            key: woman.id + index,
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            onClick: function onClick(e) {
+              return _this._onShareClick(e);
+            },
+            className: "super-cta",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 79
+              lineNumber: 81
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
               lineNumber: 84
             },
             __self: this
-          }, woman.name));
+          }, woman.name)));
+        });
+        _this.allWomen = _this.props.women.map(function (woman, index) {
+          var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["genId"])(woman.name);
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            onClick: function onClick(e) {
+              return _this._addHighlightClass(e);
+            },
+            className: "womanItem ".concat(personId),
+            key: woman.id + index,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 94
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "inner-relative",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 99
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            onClick: function onClick(e) {
+              return _this._onShareClick(e);
+            },
+            className: "super-cta",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 100
+            },
+            __self: this
+          }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 103
+            },
+            __self: this
+          }, woman.name)));
         });
       }
     });
@@ -851,9 +932,32 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_throttleScroll", lodash__WEBPACK_IMPORTED_MODULE_2__["throttle"](_this._onScroll, 100));
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_onShareClick", function (e) {
+      console.log("inside ons hare click");
+      var id = e.currentTarget.parentNode.parentNode.dataset.nameid;
+      console.log({
+        id: id
+      });
+      var domain = "http://localhost:7777";
+      var link = "".concat(domain, "/names#").concat(id);
+      var dummy = document.createElement("textarea");
+      document.body.appendChild(dummy);
+      dummy.classList.add("display-none");
+      dummy.innerHTML = link;
+      console.log(dummy);
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+      console.log(link);
+      e.currentTarget.innerHTML = "Copied to clipboard";
+    });
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_addHighlightClass", function (e) {
-      console.log("added highlight");
-      console.log(e); // el.classList.addClass("highlighted");
+      // extract data-nameid
+      var dataId = e.currentTarget.dataset.nameid;
+      document.querySelectorAll(".".concat(dataId)).forEach(function (el) {
+        return el.classList.add("highlighted");
+      }); // el.classList.addClass("highlighted");
     });
 
     return _this;
@@ -863,6 +967,17 @@ function (_Component) {
     key: "componentWillMount",
     value: function componentWillMount() {
       this._calcWomenList();
+
+      console.log(this.props.women[this.props.women.length - 1]);
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      // console.log(nextProps.women.length, this.props.women.length);
+      if (nextProps.women.length !== this.props.women.length) {
+        console.log("COMPONENT WILL RECEIVE PROPS, next and current props are diff lengths");
+        console.log(nextProps.women[nextProps.women.length - 1]); // this._scrollToHash();
+      }
     }
   }, {
     key: "componentDidMount",
@@ -873,21 +988,10 @@ function (_Component) {
       this.setState({
         scrollTop: window.pageYOffset
       });
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      console.log("component did update"); // if a new woman has been added
+      console.log(this.props.women[this.props.women.length - 1]);
+      console.log("COMPONENT DID MOUNT");
 
-      if (!this.state.scrollUpdatedOnLoad) {
-        this._scrollToHash();
-      }
-
-      if (prevProps.women.length !== this.props.women.length) {
-        this._calcWomenList();
-
-        Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["setBodyHeight"])();
-      }
+      this._scrollToHash();
     }
   }, {
     key: "componentWillUnmount",
@@ -905,7 +1009,7 @@ function (_Component) {
       var containers = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 183
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["WomenListWrap"], {
@@ -915,7 +1019,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 184
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -925,14 +1029,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 190
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 213
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -943,27 +1047,27 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 214
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 221
         },
         __self: this
       }, this.allWomen)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 225
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 226
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -975,14 +1079,14 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 227
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191
+          lineNumber: 235
         },
         __self: this
       }, this.womenWithId)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -992,14 +1096,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 239
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 218
+          lineNumber: 262
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -1010,7 +1114,7 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 219
+          lineNumber: 263
         },
         __self: this
       }, this.allWomen)))));
@@ -1079,7 +1183,7 @@ var loading = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["keyframes"]
 var Form = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].form.withConfig({
   displayName: "Form",
   componentId: "sc-1g9snaq-0"
-})(["padding:20px;font-size:1.5rem;line-height:1.5;font-weight:600;position:fixed;width:100vw;height:100vh;display:flex;justify-content:center;align-items:center;left:0;bottom:0;label{display:block;margin-bottom:1rem;color:white;}input,textarea,select{padding:0.5rem;font-size:1rem;color:", ";font-size:16px;border:unset;&:focus{outline:0;border-bottom:2px solid ", ";}}input#name{width:70vw;border-bottom:2px solid black;font-size:4rem;color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}input[type=\"submit\"]{width:auto;background:transparent;color:", ";border:0;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border:2px solid;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border-radius:30%;border-collapse:separate;display:block;border:unset;}.wrapper{display:flex;flex-direction:row;width:100%;justify-content:space-between;label{width:70%;display:flex;flex-direction:column;align-items:flex-start;color:transparent;}input{width:100%;width:100%;background-color:transparent;::-webkit-input-placeholder{color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}::-moz-placeholder{color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}:-ms-input-placeholder{color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}:-moz-placeholder{color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}}}fieldset{border:0;padding:0;display:flex;&[disabled]{opacity:0.5;}&[aria-busy=\"true\"]::before{background-size:50% auto;animation:", " 0.5s linear infinite;}}"], function (props) {
+})(["padding:20px;font-size:1.5rem;line-height:1.5;font-weight:600;position:fixed;width:100vw;height:100vh;display:flex;justify-content:center;align-items:center;left:0;bottom:0;.close{position:fixed;top:10px;right:10px;}label{display:block;margin-bottom:1rem;color:white;}input,textarea,select{padding:0.5rem;font-size:1rem;color:", ";font-size:16px;border:unset;&:focus{outline:0;border-bottom:2px solid ", ";}}input#name{width:70vw;border-bottom:2px solid black;font-size:4rem;color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}input[type=\"submit\"]{width:auto;background:transparent;color:", ";border:0;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border:2px solid;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;border-radius:30%;border-collapse:separate;display:block;border:unset;}.wrapper{display:flex;flex-direction:row;width:100%;justify-content:space-between;label{width:70%;display:flex;flex-direction:column;align-items:flex-start;color:transparent;}input{width:100%;width:100%;background-color:transparent;::-webkit-input-placeholder{color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}::-moz-placeholder{color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}:-ms-input-placeholder{color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}:-moz-placeholder{color:black;font-size:4rem;font-family:\"Khand\",sans-serif;}}}fieldset{border:0;padding:0;display:flex;&[disabled]{opacity:0.5;}&[aria-busy=\"true\"]::before{background-size:50% auto;animation:", " 0.5s linear infinite;}}"], function (props) {
   return props.theme.green;
 }, function (props) {
   return props.theme.green;
@@ -1090,7 +1194,7 @@ var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.wi
   displayName: "Form__Button",
   componentId: "sc-1g9snaq-1"
 })(["width:auto;background:transparent;border:0;font-size:2rem;font-weight:600;padding:0.5rem 1.2rem;font-size:2.5rem;font-weight:600;padding:0.5rem 1.2rem;border-radius:30%;border-collapse:separate;display:", ";display:block;position:fixed;bottom:10px;right:10px;&:focus{outline:unset;}span{margin-right:10px;text-transform:uppercase;font-family:\"Khand\",sans-serif;}svg{height:20px;}"], function (props) {
-  return props.display ? "block" : "none";
+  return props.willdisplay ? "block" : "none";
 });
 /* harmony default export */ __webpack_exports__["default"] = (Form);
 
@@ -1132,8 +1236,10 @@ __webpack_require__.r(__webpack_exports__);
 var WomenListWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "WomenList__WomenListWrap",
   componentId: "sc-3l0rl8-0"
-})(["position:fixed;top:0;left:0;width:90vw;left:5vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;transition:0.5s opacity;opacity:", ";.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;width:100%;}.womanItem{width:100%;background:transparent;display:flex;align-items:center;-webkit-transform:translate3d(0,0,0);&:nth-child(3n + 1){h1{text-align:left;}}&:nth-child(3n + 2){h1{text-align:center;}}&:nth-child(3n + 3){h1{text-align:right;}}&:nth-child(4n + 1){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 2){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 3){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 4){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}h1{text-transform:uppercase;font-size:14vw;width:100%;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;line-height:0.7;margin-block-start:1rem;margin-block-end:1rem;&:hover{color:transparent;}}}"], function (props) {
+})(["position:fixed;top:0;left:0;width:90vw;left:5vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;transition:0.5s opacity;opacity:", ";.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;width:100%;}.womanItem{width:100%;background:transparent;display:flex;align-items:center;-webkit-transform:translate3d(0,0,0);.inner-relative{position:relative;display:inline-block !important;cursor:pointer;}.super-cta{position:absolute;right:0;top:-30px;font-size:2rem;text-transform:uppercase;color:black;-webkit-text-stroke:1px black;color:", ";display:none;}&.highlighted{.super-cta{display:block;}}&:nth-child(3n + 1){justify-content:flex-start;}&:nth-child(3n + 2){justify-content:center;text-align:center;}&:nth-child(3n + 3){justify-content:flex-end;text-align:right;}&:nth-child(4n + 1){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 2){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 3){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 4){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}h1{text-transform:uppercase;font-size:14vw;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;line-height:0.7;margin-block-start:1rem;margin-block-end:1rem;&:hover{color:transparent;}}}"], function (props) {
   return props.formFocused ? ".1" : "1";
+}, function (props) {
+  return props.theme.darkerOffWhite;
 }, function (props) {
   return props.theme.teal;
 }, function (props) {

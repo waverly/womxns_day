@@ -35,20 +35,40 @@ export const WomenListWrap = styled.div`
     align-items: center;
     -webkit-transform: translate3d(0, 0, 0);
 
-    &:nth-child(3n + 1) {
-      h1 {
-        text-align: left;
+    .inner-relative {
+      position: relative;
+      display: inline-block !important;
+      cursor: pointer;
+    }
+
+    .super-cta {
+      position: absolute;
+      right: 0;
+      top: -30px;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: black;
+      -webkit-text-stroke: 1px black;
+      color: ${props => props.theme.darkerOffWhite};
+      display: none;
+    }
+
+    &.highlighted {
+      .super-cta {
+        display: block;
       }
+    }
+
+    &:nth-child(3n + 1) {
+      justify-content: flex-start;
     }
     &:nth-child(3n + 2) {
-      h1 {
-        text-align: center;
-      }
+      justify-content: center;
+      text-align: center;
     }
     &:nth-child(3n + 3) {
-      h1 {
-        text-align: right;
-      }
+      justify-content: flex-end;
+      text-align: right;
     }
 
     &:nth-child(4n + 1) {
@@ -103,7 +123,6 @@ export const WomenListWrap = styled.div`
     h1 {
       text-transform: uppercase;
       font-size: 14vw;
-      width: 100%;
       display: block;
       margin-block-start: 10px;
       margin-block-end: 10px;
