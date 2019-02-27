@@ -5,5 +5,5 @@ type Mutation {
 }
 
 type Query {
-    women: [Woman]!
+    women(orderBy: DateTime): [Woman]!
 }

@@ -7,9 +7,10 @@ import WomenList from "./WomenList";
 
 const ALL_WOMEN_QUERY = gql`
   query ALL_WOMEN_QUERY {
-    women {
+    women(orderBy: createdAt_DESC) {
       id
       name
+      createdAt
     }
   }
 `;

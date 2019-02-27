@@ -2,12 +2,14 @@ import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import * as _ from "lodash";
 import { WomenListWrap, Container, InnerWrap } from "./styles/WomenList";
-import { genId, setBodyHeight } from "./helpers";
+import { genId, setBodyHeight, _addHighlightClass } from "./helpers";
+import InnerNames from "./InnerNames";
 
 class WomenList extends Component {
   state = {
     scrollTop: 0,
-    newlyAddedItem: null
+    newlyAddedItem: null,
+    highlightedId: null
   };
 
   allWomen = null;
@@ -21,33 +23,26 @@ class WomenList extends Component {
       const hash = window.location.hash;
       if (hash !== "") {
         const id = hash.substr(1);
+        this.setState({ highlightedId: id });
+
+        // TODO: refactor to use refs instead
         const womenWrapper = document.getElementById("womanList");
         const scrollEl = document.querySelector(`[data-nameid=${id}]`);
 
         console.log(womenWrapper);
         console.log(scrollEl);
-        console.log(womenWrapper);
-
-        // setTimeout(() => {
-        //   const timeoutscrollel = document.querySelector(
-        //     `[data-nameid="jenny"]`
-        //   );
-        //   console.log(timeoutscrollel);
-        // }, 500);
 
         // debugger;
 
         if (scrollEl) {
           const elScrollHeight = scrollEl.offsetTop;
-          console.log(womenWrapper);
-          console.log(scrollEl);
-          console.log(elScrollHeight);
-          console.log(womenWrapper.lastChild.lastChild);
           const halfHeight = window.innerHeight / 2.5;
           const totalScrollHeight = elScrollHeight - halfHeight;
           document.querySelectorAll(`.${id}`).forEach(el => {
             el.classList.add("highlighted");
           });
+
+          console.log(totalScrollHeight);
           window.scrollTo({
             top: totalScrollHeight,
             left: 0
@@ -64,72 +59,15 @@ class WomenList extends Component {
     }
   };
 
-  _calcWomenList = () => {
-    if (this.props.women) {
-      console.log("running calc women list");
-      this.womenWithId = this.props.women.map((woman, index) => {
-        const personId = genId(woman.name);
+  componentWillMount() {}
 
-        return (
-          <div
-            data-nameid={personId}
-            className={`womanItem ${personId}`}
-            key={woman.id + personId + index}
-            onClick={e => this._addHighlightClass(e)}
-          >
-            <span className="inner-relative">
-              <span onClick={e => this._onShareClick(e)} className="super-cta">
-                Share
-              </span>
-              <h1>{woman.name}</h1>
-            </span>
-          </div>
-        );
-      });
-
-      this.allWomen = this.props.women.map((woman, index) => {
-        const personId = genId(woman.name);
-
-        return (
-          <div
-            onClick={e => this._addHighlightClass(e)}
-            className={`womanItem ${personId}`}
-            key={woman.id + index}
-          >
-            <span className="inner-relative">
-              <span onClick={e => this._onShareClick(e)} className="super-cta">
-                Share
-              </span>
-              <h1>{woman.name}</h1>
-            </span>
-          </div>
-        );
-      });
-    }
-  };
-
-  componentWillMount() {
-    this._calcWomenList();
-    console.log(this.props.women[this.props.women.length - 1]);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    // console.log(nextProps.women.length, this.props.women.length);
-    if (nextProps.women.length !== this.props.women.length) {
-      console.log(
-        "COMPONENT WILL RECEIVE PROPS, next and current props are diff lengths"
-      );
-      console.log(nextProps.women[nextProps.women.length - 1]);
-      // this._scrollToHash();
-    }
-  }
+  componentWillReceiveProps(nextProps) {}
 
   componentDidMount() {
     setBodyHeight();
     document.addEventListener("scroll", this._throttleScroll);
     window.addEventListener("resize", setBodyHeight);
     this.setState({ scrollTop: window.pageYOffset });
-    console.log(this.props.women[this.props.women.length - 1]);
 
     console.log("COMPONENT DID MOUNT");
     this._scrollToHash();
@@ -151,34 +89,13 @@ class WomenList extends Component {
 
   _throttleScroll = _.throttle(this._onScroll, 100);
 
-  _onShareClick = e => {
-    console.log("inside ons hare click");
-    const id = e.currentTarget.parentNode.parentNode.dataset.nameid;
-    console.log({ id });
-    const domain = "http://localhost:7777";
-    const link = `${domain}/names#${id}`;
-    const dummy = document.createElement("textarea");
-    document.body.appendChild(dummy);
-    dummy.classList.add("display-none");
-    dummy.innerHTML = link;
-    console.log(dummy);
-    dummy.select();
-    document.execCommand("copy");
-    document.body.removeChild(dummy);
-    console.log(link);
-    e.currentTarget.innerHTML = "Copied to clipboard";
-  };
-
-  _addHighlightClass = e => {
-    // extract data-nameid
-    const dataId = e.currentTarget.dataset.nameid;
-    document
-      .querySelectorAll(`.${dataId}`)
-      .forEach(el => el.classList.add("highlighted"));
-    // el.classList.addClass("highlighted");
-  };
-
   render() {
+    // const reversedNames = this.props.women.reverse();
+    const names = [{ name: "one" }, { name: "two" }, { name: "three" }];
+    // console.log(names);
+    // const names = this.props.women;
+    const reversedNames = this.props.women;
+
     const containers = (
       <Fragment>
         <WomenListWrap
@@ -218,7 +135,10 @@ class WomenList extends Component {
                 }}
                 className="womenWrapper"
               >
-                <div className="hidden">{this.allWomen}</div>
+                <InnerNames
+                  highlightedid={this.state.highlightedId}
+                  names={reversedNames}
+                />
               </InnerWrap>
             </div>
           </Container>
@@ -232,7 +152,11 @@ class WomenList extends Component {
                 order={1}
                 className="womenWrapper"
               >
-                <div className="hidden">{this.womenWithId}</div>
+                <InnerNames
+                  highlightedid={this.state.highlightedId}
+                  names={reversedNames}
+                  renderwithid={true}
+                />
               </InnerWrap>
             </div>
           </Container>
@@ -259,17 +183,18 @@ class WomenList extends Component {
                 )`
             }}
           >
-            <div className="hidden">
-              <InnerWrap
-                style={{
-                  transform: `translate3d(0px, -${this.state.scrollTop}px, 0px)`
-                }}
-                order={2}
-                className="womenWrapper"
-              >
-                {this.allWomen}
-              </InnerWrap>
-            </div>
+            <InnerWrap
+              style={{
+                transform: `translate3d(0px, -${this.state.scrollTop}px, 0px)`
+              }}
+              order={2}
+              className="womenWrapper"
+            >
+              <InnerNames
+                highlightedid={this.state.highlightedId}
+                names={reversedNames}
+              />
+            </InnerWrap>
           </Container>
         </WomenListWrap>
       </Fragment>

@@ -22,3 +22,29 @@ export const genId = name => {
 
   return id;
 };
+
+export const _onShareClick = e => {
+  console.log("inside ons hare click");
+  const id = e.currentTarget.parentNode.parentNode.dataset.nameid;
+  console.log({ id });
+  const domain = "http://localhost:7777";
+  const link = `${domain}/names#${id}`;
+  const dummy = document.createElement("textarea");
+  document.body.appendChild(dummy);
+  dummy.classList.add("display-none");
+  dummy.innerHTML = link;
+  console.log(dummy);
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+  console.log(link);
+  e.currentTarget.innerHTML = "Copied to clipboard";
+};
+
+export const _addHighlightClass = e => {
+  // extract data-nameid
+  const dataId = e.currentTarget.dataset.nameid;
+  document
+    .querySelectorAll(`.${dataId}`)
+    .forEach(el => el.classList.add("highlighted"));
+};

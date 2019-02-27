@@ -1,5 +1,182 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/names.js"],{
 
+/***/ "./components/InnerNames.js":
+/*!**********************************!*\
+  !*** ./components/InnerNames.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/InnerNames.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var OuterWrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "InnerNames__OuterWrap",
+  componentId: "njma8s-0"
+})(["overflow:hidden;"]);
+
+var _renderNamesWithId = function _renderNamesWithId(names, highlightedid) {
+  if (names) {
+    return names.map(function (woman, index) {
+      var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["genId"])(woman.name); //   console.log(personId);
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "data-nameid": personId,
+        className: highlightedid === personId ? "womanItem ".concat(personId, " ").concat(highlightedid, " highlighted") : "womanItem ".concat(personId),
+        key: woman.id + personId + index,
+        onClick: function onClick(e) {
+          return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["_addHighlightClass"])(e);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "inner-relative",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        onClick: function onClick(e) {
+          return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["_onShareClick"])(e);
+        },
+        className: "super-cta",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }, woman.name)));
+    });
+  }
+};
+
+var _renderNames = function _renderNames(names, highlightedid) {
+  if (names) {
+    return names.map(function (woman, index) {
+      var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["genId"])(woman.name);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: highlightedid === personId ? "womanItem ".concat(personId, " ").concat(highlightedid, " highlighted") : "womanItem ".concat(personId),
+        key: woman.id + personId + index,
+        onClick: function onClick(e) {
+          return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["_addHighlightClass"])(e);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "inner-relative",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        onClick: function onClick(e) {
+          return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["_onShareClick"])(e);
+        },
+        className: "super-cta",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, woman.name)));
+    });
+  }
+}; // TODO: figure out why mouseMove is causing this component to rerender
+
+
+var InnerNames =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(InnerNames, _React$PureComponent);
+
+  function InnerNames() {
+    _classCallCheck(this, InnerNames);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(InnerNames).apply(this, arguments));
+  }
+
+  _createClass(InnerNames, [{
+    key: "render",
+    //   shouldComponentUpdate(nextProps) {
+    //     const namesDiff = this.props.names !== nextProps.names;
+    //     const highlightDiff = this.props.highlightedid !== nextProps.highlightedid;
+    //     const renderwithidDiff = this.props.renderwithid !== nextProps.renderwithid;
+    //     console.log({ namesDiff, highlightDiff, renderwithidDiff });
+    //     if (this.props.names === nextProps.names) {
+    //       console.log("the component will NOT update");
+    //       return false;
+    //     } else {
+    //       console.log(this.props, nextProps);
+    //       console.log("the component will update");
+    //       return true;
+    //     }
+    //   }
+    value: function render() {
+      // console.log(this.props);
+      console.log("rendering");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(OuterWrap, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, this.props.renderwithid ? _renderNamesWithId(this.props.names, this.props.highlightedid) : _renderNames(this.props.names, this.props.highlightedid));
+    }
+  }]);
+
+  return InnerNames;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+/* harmony default export */ __webpack_exports__["default"] = (InnerNames);
+
+/***/ }),
+
 /***/ "./components/Nav.js":
 /*!***************************!*\
   !*** ./components/Nav.js ***!
@@ -101,7 +278,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  query ALL_WOMEN_QUERY {\n    women {\n      id\n      name\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  query ALL_WOMEN_QUERY {\n    women(orderBy: createdAt_DESC) {\n      id\n      name\n      createdAt\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -271,20 +448,20 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 163
+          lineNumber: 164
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164
+          lineNumber: 165
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Center, {
         onMouseMove: this._onMouseMove,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165
+          lineNumber: 166
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
@@ -292,7 +469,7 @@ function (_Component) {
         refetch: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 166
+          lineNumber: 167
         },
         __self: this
       }, function (_ref) {
@@ -303,14 +480,14 @@ function (_Component) {
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 169
+            lineNumber: 170
           },
           __self: this
         }, "Error: ", error.message);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 171
+            lineNumber: 172
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -322,7 +499,7 @@ function (_Component) {
           matrix3DVal2: _this2.state.matrix3DVal2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 172
+            lineNumber: 173
           },
           __self: this
         }));
@@ -354,6 +531,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _styles_WomenList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/WomenList */ "./components/styles/WomenList.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
+/* harmony import */ var _InnerNames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./InnerNames */ "./components/InnerNames.js");
 var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/WomenList.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -382,6 +560,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var WomenList =
 /*#__PURE__*/
 function (_Component) {
@@ -402,7 +581,8 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       scrollTop: 0,
-      newlyAddedItem: null
+      newlyAddedItem: null,
+      highlightedId: null
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "allWomen", null);
@@ -419,29 +599,25 @@ function (_Component) {
 
         if (hash !== "") {
           var id = hash.substr(1);
+
+          _this.setState({
+            highlightedId: id
+          }); // TODO: refactor to use refs instead
+
+
           var womenWrapper = document.getElementById("womanList");
           var scrollEl = document.querySelector("[data-nameid=".concat(id, "]"));
           console.log(womenWrapper);
-          console.log(scrollEl);
-          console.log(womenWrapper); // setTimeout(() => {
-          //   const timeoutscrollel = document.querySelector(
-          //     `[data-nameid="jenny"]`
-          //   );
-          //   console.log(timeoutscrollel);
-          // }, 500);
-          // debugger;
+          console.log(scrollEl); // debugger;
 
           if (scrollEl) {
             var elScrollHeight = scrollEl.offsetTop;
-            console.log(womenWrapper);
-            console.log(scrollEl);
-            console.log(elScrollHeight);
-            console.log(womenWrapper.lastChild.lastChild);
             var halfHeight = window.innerHeight / 2.5;
             var totalScrollHeight = elScrollHeight - halfHeight;
             document.querySelectorAll(".".concat(id)).forEach(function (el) {
               el.classList.add("highlighted");
             });
+            console.log(totalScrollHeight);
             window.scrollTo({
               top: totalScrollHeight,
               left: 0 // behavior: "smooth"
@@ -451,89 +627,6 @@ function (_Component) {
             window && (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" && window.scrollTo && typeof window.scrollTo === "function" && window.scrollTo(0, 0);
           }
         }
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_calcWomenList", function () {
-      if (_this.props.women) {
-        console.log("running calc women list");
-        _this.womenWithId = _this.props.women.map(function (woman, index) {
-          var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["genId"])(woman.name);
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            "data-nameid": personId,
-            className: "womanItem ".concat(personId),
-            key: woman.id + personId + index,
-            onClick: function onClick(e) {
-              return _this._addHighlightClass(e);
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 74
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-            className: "inner-relative",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 80
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-            onClick: function onClick(e) {
-              return _this._onShareClick(e);
-            },
-            className: "super-cta",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 81
-            },
-            __self: this
-          }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 84
-            },
-            __self: this
-          }, woman.name)));
-        });
-        _this.allWomen = _this.props.women.map(function (woman, index) {
-          var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["genId"])(woman.name);
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            onClick: function onClick(e) {
-              return _this._addHighlightClass(e);
-            },
-            className: "womanItem ".concat(personId),
-            key: woman.id + index,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 94
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-            className: "inner-relative",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 99
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-            onClick: function onClick(e) {
-              return _this._onShareClick(e);
-            },
-            className: "super-cta",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 100
-            },
-            __self: this
-          }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 103
-            },
-            __self: this
-          }, woman.name)));
-        });
       }
     });
 
@@ -547,53 +640,15 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_throttleScroll", lodash__WEBPACK_IMPORTED_MODULE_2__["throttle"](_this._onScroll, 100));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_onShareClick", function (e) {
-      console.log("inside ons hare click");
-      var id = e.currentTarget.parentNode.parentNode.dataset.nameid;
-      console.log({
-        id: id
-      });
-      var domain = "http://localhost:7777";
-      var link = "".concat(domain, "/names#").concat(id);
-      var dummy = document.createElement("textarea");
-      document.body.appendChild(dummy);
-      dummy.classList.add("display-none");
-      dummy.innerHTML = link;
-      console.log(dummy);
-      dummy.select();
-      document.execCommand("copy");
-      document.body.removeChild(dummy);
-      console.log(link);
-      e.currentTarget.innerHTML = "Copied to clipboard";
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_addHighlightClass", function (e) {
-      // extract data-nameid
-      var dataId = e.currentTarget.dataset.nameid;
-      document.querySelectorAll(".".concat(dataId)).forEach(function (el) {
-        return el.classList.add("highlighted");
-      }); // el.classList.addClass("highlighted");
-    });
-
     return _this;
   }
 
   _createClass(WomenList, [{
     key: "componentWillMount",
-    value: function componentWillMount() {
-      this._calcWomenList();
-
-      console.log(this.props.women[this.props.women.length - 1]);
-    }
+    value: function componentWillMount() {}
   }, {
     key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps) {
-      // console.log(nextProps.women.length, this.props.women.length);
-      if (nextProps.women.length !== this.props.women.length) {
-        console.log("COMPONENT WILL RECEIVE PROPS, next and current props are diff lengths");
-        console.log(nextProps.women[nextProps.women.length - 1]); // this._scrollToHash();
-      }
-    }
+    value: function componentWillReceiveProps(nextProps) {}
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -603,7 +658,6 @@ function (_Component) {
       this.setState({
         scrollTop: window.pageYOffset
       });
-      console.log(this.props.women[this.props.women.length - 1]);
       console.log("COMPONENT DID MOUNT");
 
       this._scrollToHash();
@@ -621,10 +675,21 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      // const reversedNames = this.props.women.reverse();
+      var names = [{
+        name: "one"
+      }, {
+        name: "two"
+      }, {
+        name: "three"
+      }]; // console.log(names);
+      // const names = this.props.women;
+
+      var reversedNames = this.props.women;
       var containers = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 100
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["WomenListWrap"], {
@@ -634,7 +699,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 101
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -644,14 +709,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 107
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 213
+          lineNumber: 130
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -662,27 +727,28 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 214
+          lineNumber: 131
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        highlightedid: this.state.highlightedId,
+        names: reversedNames,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 138
+        },
+        __self: this
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 145
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221
-        },
-        __self: this
-      }, this.allWomen)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 225
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hidden",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 226
+          lineNumber: 146
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -694,31 +760,26 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 227
+          lineNumber: 147
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hidden",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        highlightedid: this.state.highlightedId,
+        names: reversedNames,
+        renderwithid: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 155
         },
         __self: this
-      }, this.womenWithId)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
         style: {
           transformOrigin: "top center",
           transform: "matrix3d(\n                  1,\n                  0,\n                  0,\n                  0,\n                  0,\n                  ".concat(this.props.matrix3DVal2, ",\n                  ").concat(this.props.matrix3DVal1, ",\n                  0,\n                  0,\n                  ").concat(this.props.matrix3DVal1 * -1, ",\n                  ").concat(this.props.matrix3DVal2, ",\n                  0,\n                  0,\n                  0,\n                  0,\n                  1\n                )")
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hidden",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 262
+          lineNumber: 163
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -729,10 +790,18 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 263
+          lineNumber: 186
         },
         __self: this
-      }, this.allWomen)))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        highlightedid: this.state.highlightedId,
+        names: reversedNames,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 193
+        },
+        __self: this
+      })))));
       return containers;
     }
   }]);
@@ -755,13 +824,15 @@ WomenList.defaultProps = {
 /*!*************************************!*\
   !*** ./components/helpers/index.js ***!
   \*************************************/
-/*! exports provided: setBodyHeight, genId */
+/*! exports provided: setBodyHeight, genId, _onShareClick, _addHighlightClass */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setBodyHeight", function() { return setBodyHeight; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "genId", function() { return genId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_onShareClick", function() { return _onShareClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_addHighlightClass", function() { return _addHighlightClass; });
 var setBodyHeight = function setBodyHeight() {
   if (typeof window === "undefined") {
     return 0;
@@ -778,6 +849,32 @@ var setBodyHeight = function setBodyHeight() {
 var genId = function genId(name) {
   var id = name.replace(/[^a-zA-Z ]/g, "").split(" ").join("").toLowerCase();
   return id;
+};
+var _onShareClick = function _onShareClick(e) {
+  console.log("inside ons hare click");
+  var id = e.currentTarget.parentNode.parentNode.dataset.nameid;
+  console.log({
+    id: id
+  });
+  var domain = "http://localhost:7777";
+  var link = "".concat(domain, "/names#").concat(id);
+  var dummy = document.createElement("textarea");
+  document.body.appendChild(dummy);
+  dummy.classList.add("display-none");
+  dummy.innerHTML = link;
+  console.log(dummy);
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+  console.log(link);
+  e.currentTarget.innerHTML = "Copied to clipboard";
+};
+var _addHighlightClass = function _addHighlightClass(e) {
+  // extract data-nameid
+  var dataId = e.currentTarget.dataset.nameid;
+  document.querySelectorAll(".".concat(dataId)).forEach(function (el) {
+    return el.classList.add("highlighted");
+  });
 };
 
 /***/ }),

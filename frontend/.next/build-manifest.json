@@ -14,10 +14,6 @@
     "/names": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/addname": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }
