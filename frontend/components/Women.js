@@ -11,6 +11,7 @@ const ALL_WOMEN_QUERY = gql`
       id
       name
       createdAt
+      slug
     }
   }
 `;

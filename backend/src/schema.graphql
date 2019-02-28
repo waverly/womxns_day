@@ -1,9 +1,9 @@
 #import * from './generated/prisma.graphql'
 
 type Mutation {
-    createWoman(name: String): Woman
+    createWoman(name: String, slug: String): Woman
 }
 
 type Query {
-    women(orderBy: DateTime): [Woman]!
+    women(where: WomanWhereInput, orderBy: DateTime): [Woman]!
 }

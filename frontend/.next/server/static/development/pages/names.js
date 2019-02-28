@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -237,27 +237,11 @@ function (_React$PureComponent) {
 
   _createClass(InnerNames, [{
     key: "render",
-    //   shouldComponentUpdate(nextProps) {
-    //     const namesDiff = this.props.names !== nextProps.names;
-    //     const highlightDiff = this.props.highlightedid !== nextProps.highlightedid;
-    //     const renderwithidDiff = this.props.renderwithid !== nextProps.renderwithid;
-    //     console.log({ namesDiff, highlightDiff, renderwithidDiff });
-    //     if (this.props.names === nextProps.names) {
-    //       console.log("the component will NOT update");
-    //       return false;
-    //     } else {
-    //       console.log(this.props, nextProps);
-    //       console.log("the component will update");
-    //       return true;
-    //     }
-    //   }
     value: function render() {
-      // console.log(this.props);
-      console.log("rendering");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(OuterWrap, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 69
         },
         __self: this
       }, this.props.renderwithid ? _renderNamesWithId(this.props.names, this.props.highlightedid) : _renderNames(this.props.names, this.props.highlightedid));
@@ -373,7 +357,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  query ALL_WOMEN_QUERY {\n    women(orderBy: createdAt_DESC) {\n      id\n      name\n      createdAt\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  query ALL_WOMEN_QUERY {\n    women(orderBy: createdAt_DESC) {\n      id\n      name\n      createdAt\n      slug\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -543,20 +527,20 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164
+          lineNumber: 165
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165
+          lineNumber: 166
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Center, {
         onMouseMove: this._onMouseMove,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 166
+          lineNumber: 167
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
@@ -564,7 +548,7 @@ function (_Component) {
         refetch: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 167
+          lineNumber: 168
         },
         __self: this
       }, function (_ref) {
@@ -575,14 +559,14 @@ function (_Component) {
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 170
+            lineNumber: 171
           },
           __self: this
         }, "Error: ", error.message);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 172
+            lineNumber: 173
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -594,7 +578,7 @@ function (_Component) {
           matrix3DVal2: _this2.state.matrix3DVal2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 173
+            lineNumber: 174
           },
           __self: this
         }));
@@ -702,9 +686,9 @@ function (_Component) {
 
 
           var womenWrapper = document.getElementById("womanList");
-          var scrollEl = document.querySelector("[data-nameid=".concat(id, "]"));
-          console.log(womenWrapper);
-          console.log(scrollEl); // debugger;
+          var scrollEl = document.querySelector("[data-nameid=".concat(id, "]")); // console.log(womenWrapper);
+          // console.log(scrollEl);
+          // debugger;
 
           if (scrollEl) {
             var elScrollHeight = scrollEl.offsetTop;
@@ -712,8 +696,8 @@ function (_Component) {
             var totalScrollHeight = elScrollHeight - halfHeight;
             document.querySelectorAll(".".concat(id)).forEach(function (el) {
               el.classList.add("highlighted");
-            });
-            console.log(totalScrollHeight);
+            }); // console.log(totalScrollHeight);
+
             window.scrollTo({
               top: totalScrollHeight,
               left: 0 // behavior: "smooth"
@@ -1109,7 +1093,7 @@ var Home = function Home(props) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/names.js ***!
   \******************************/

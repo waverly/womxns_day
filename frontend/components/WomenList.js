@@ -29,8 +29,8 @@ class WomenList extends Component {
         const womenWrapper = document.getElementById("womanList");
         const scrollEl = document.querySelector(`[data-nameid=${id}]`);
 
-        console.log(womenWrapper);
-        console.log(scrollEl);
+        // console.log(womenWrapper);
+        // console.log(scrollEl);
 
         // debugger;
 
@@ -42,7 +42,7 @@ class WomenList extends Component {
             el.classList.add("highlighted");
           });
 
-          console.log(totalScrollHeight);
+          // console.log(totalScrollHeight);
           window.scrollTo({
             top: totalScrollHeight,
             left: 0

@@ -64,25 +64,7 @@ const _renderNames = (names, highlightedid) => {
 // TODO: figure out why mouseMove is causing this component to rerender
 
 class InnerNames extends React.PureComponent {
-  //   shouldComponentUpdate(nextProps) {
-  //     const namesDiff = this.props.names !== nextProps.names;
-  //     const highlightDiff = this.props.highlightedid !== nextProps.highlightedid;
-  //     const renderwithidDiff = this.props.renderwithid !== nextProps.renderwithid;
-  //     console.log({ namesDiff, highlightDiff, renderwithidDiff });
-
-  //     if (this.props.names === nextProps.names) {
-  //       console.log("the component will NOT update");
-  //       return false;
-  //     } else {
-  //       console.log(this.props, nextProps);
-  //       console.log("the component will update");
-  //       return true;
-  //     }
-  //   }
-
   render() {
-    // console.log(this.props);
-    console.log("rendering");
     return (
       <OuterWrap>
         {this.props.renderwithid
