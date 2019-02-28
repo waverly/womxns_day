@@ -263,77 +263,22 @@ function (_Component) {
               var _ref2 = _asyncToGenerator(
               /*#__PURE__*/
               _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
-                var totalRes, _ref3, data, res, _totalRes;
-
+                var res;
                 return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
                   while (1) {
                     switch (_context.prev = _context.next) {
                       case 0:
-                        e.preventDefault(); // TODO:
-                        // without refreshing page, the list of names does not refresh
-                        // therefore u can enter the same name infinite times until u refresh the page
+                        e.preventDefault(); // only run query if data.women did not have any items in it
 
-                        console.log(_this2.state.slug);
-                        _context.next = 4;
-                        return client.query({
-                          query: WOMAN_QUERY_NO_ARGS
-                        });
-
-                      case 4:
-                        totalRes = _context.sent;
-                        console.log(totalRes.data);
-                        _context.next = 8;
-                        return client.query({
-                          query: QUERY_WOMEN,
-                          variables: {
-                            slug: _this2.state.slug
-                          }
-                        });
-
-                      case 8:
-                        _ref3 = _context.sent;
-                        data = _ref3.data;
-                        // if the query for this name returns with any results,
-                        console.log(data.women);
-                        console.log(data.women.length);
-
-                        if (!(data.women.length > 0)) {
-                          _context.next = 18;
-                          break;
-                        }
-
-                        console.log("not adding to db");
-                        next_router__WEBPACK_IMPORTED_MODULE_6___default.a.push("/names#".concat(_this2.state.slug));
-
-                        _this2.setState({
-                          name: "",
-                          slug: ""
-                        });
-
-                        _context.next = 29;
-                        break;
-
-                      case 18:
-                        console.log("adding to db"); // only run query if data.women did not have any items in it
-
-                        _context.next = 21;
+                        _context.next = 3;
                         return createWoman({
                           refetchQueries: [{
                             query: _Women__WEBPACK_IMPORTED_MODULE_10__["ALL_WOMEN_QUERY"]
                           }]
                         });
 
-                      case 21:
+                      case 3:
                         res = _context.sent;
-                        console.log(res);
-                        _context.next = 25;
-                        return client.query({
-                          query: WOMAN_QUERY_NO_ARGS
-                        });
-
-                      case 25:
-                        _totalRes = _context.sent;
-                        console.log(_totalRes.data);
                         next_router__WEBPACK_IMPORTED_MODULE_6___default.a.push("/names#".concat(_this2.state.slug));
 
                         _this2.setState({
@@ -341,7 +286,7 @@ function (_Component) {
                           slug: ""
                         });
 
-                      case 29:
+                      case 6:
                       case "end":
                         return _context.stop();
                     }
@@ -362,13 +307,13 @@ function (_Component) {
             href: "/names",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 110
+              lineNumber: 75
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 111
+              lineNumber: 76
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("svg", {
@@ -380,7 +325,7 @@ function (_Component) {
             xmlns: "http://www.w3.org/2000/svg",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 112
+              lineNumber: 77
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
@@ -388,14 +333,14 @@ function (_Component) {
             fill: "black",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 120
+              lineNumber: 85
             },
             __self: this
           })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_8__["default"], {
             error: error,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 127
+              lineNumber: 92
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -403,21 +348,21 @@ function (_Component) {
             "aria-busy": loading,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 128
+              lineNumber: 93
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
             className: "wrapper",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 129
+              lineNumber: 94
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
             htmlFor: "title",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 130
+              lineNumber: 95
             },
             __self: this
           }, "Name", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -432,7 +377,7 @@ function (_Component) {
             onChange: _this2.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 132
+              lineNumber: 97
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_7__["Button"], {
@@ -440,13 +385,13 @@ function (_Component) {
             type: "submit",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 144
+              lineNumber: 109
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 148
+              lineNumber: 113
             },
             __self: this
           }, "Submit"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("svg", {
@@ -457,7 +402,7 @@ function (_Component) {
             xmlns: "http://www.w3.org/2000/svg",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 149
+              lineNumber: 114
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
@@ -465,7 +410,7 @@ function (_Component) {
             fill: "black",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 156
+              lineNumber: 121
             },
             __self: this
           }))))));

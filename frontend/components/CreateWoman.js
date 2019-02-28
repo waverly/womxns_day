@@ -63,48 +63,13 @@ class CreateWoman extends Component {
                   onSubmit={async e => {
                     e.preventDefault();
 
-                    // TODO:
-                    // without refreshing page, the list of names does not refresh
-                    // therefore u can enter the same name infinite times until u refresh the page
-
-                    console.log(this.state.slug);
-
-                    const totalRes = await client.query({
-                      query: WOMAN_QUERY_NO_ARGS
+                    // only run query if data.women did not have any items in it
+                    const res = await createWoman({
+                      refetchQueries: [{ query: ALL_WOMEN_QUERY }]
                     });
-                    console.log(totalRes.data);
 
-                    const { data } = await client.query({
-                      query: QUERY_WOMEN,
-                      variables: {
-                        slug: this.state.slug
-                      }
-                    });
-                    // if the query for this name returns with any results,
-
-                    console.log(data.women);
-                    console.log(data.women.length);
-
-                    if (data.women.length > 0) {
-                      console.log("not adding to db");
-
-                      Router.push(`/names#${this.state.slug}`);
-                      this.setState({ name: "", slug: "" });
-                    } else {
-                      console.log("adding to db");
-                      // only run query if data.women did not have any items in it
-                      const res = await createWoman({
-                        refetchQueries: [{ query: ALL_WOMEN_QUERY }]
-                      });
-                      console.log(res);
-                      const totalRes = await client.query({
-                        query: WOMAN_QUERY_NO_ARGS
-                      });
-
-                      console.log(totalRes.data);
-                      Router.push(`/names#${this.state.slug}`);
-                      this.setState({ name: "", slug: "" });
-                    }
+                    Router.push(`/names#${this.state.slug}`);
+                    this.setState({ name: "", slug: "" });
                   }}
                 >
                   <Link href="/names">
