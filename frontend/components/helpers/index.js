@@ -7,6 +7,8 @@ export const setBodyHeight = () => {
       // TODO: adjust bottom padding for responsive
       // calculate half of window height and add to women's list
       const halfHeight = window.innerHeight / 1.5;
+
+      console.log("in set body height ", womanListHeight);
       document.body.style.height =
         womanListHeight + womanListHeight * 0.05 + "px";
     }
@@ -24,21 +26,27 @@ export const genId = name => {
 };
 
 export const _onShareClick = e => {
-  console.log("inside ons hare click");
-  const id = e.currentTarget.parentNode.parentNode.dataset.nameid;
-  console.log({ id });
-  const domain = "http://localhost:7777";
-  const link = `${domain}/names#${id}`;
-  const dummy = document.createElement("textarea");
-  document.body.appendChild(dummy);
-  dummy.classList.add("display-none");
-  dummy.innerHTML = link;
-  console.log(dummy);
-  dummy.select();
-  document.execCommand("copy");
-  document.body.removeChild(dummy);
-  console.log(link);
-  e.currentTarget.innerHTML = "Copied to clipboard";
+  try {
+    console.log("inside ons hare click");
+    const id = e.currentTarget.parentNode.parentNode.dataset.nameid;
+    console.log({ id });
+    const domain = "http://localhost:7777";
+    const link = `${domain}/names#${id}`;
+    const dummy = document.createElement("input");
+
+    document.body.appendChild(dummy);
+    dummy.classList.add("display-none");
+    dummy.value = link;
+    console.log(dummy.value);
+    console.log(dummy);
+    dummy.select();
+    document.execCommand("copy");
+    alert("Copied the text: " + dummy.value);
+    document.body.removeChild(dummy);
+    e.currentTarget.innerHTML = "Copied to clipboard";
+  } catch (err) {
+    console.log("Error while copying to clipboard: " + err);
+  }
 };
 
 export const _addHighlightClass = e => {

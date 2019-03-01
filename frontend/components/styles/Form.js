@@ -54,9 +54,8 @@ const Form = styled.form`
   input#name {
     width: 70vw;
     border-bottom: 2px solid black;
-    font-size: 4rem;
+    font-size: 10vw;
     color: black;
-    font-size: 4rem;
     font-family: "Khand", sans-serif;
   }
 
@@ -100,25 +99,25 @@ const Form = styled.form`
       ::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
         color: black;
-        font-size: 4rem;
+        font-size: 10vw;
         font-family: "Khand", sans-serif;
       }
       ::-moz-placeholder {
         /* Firefox 19+ */
         color: black;
-        font-size: 4rem;
+        font-size: 10vw;
         font-family: "Khand", sans-serif;
       }
       :-ms-input-placeholder {
         /* IE 10+ */
         color: black;
-        font-size: 4rem;
+        font-size: 10vw;
         font-family: "Khand", sans-serif;
       }
       :-moz-placeholder {
         /* Firefox 18- */
         color: black;
-        font-size: 4rem;
+        font-size: 10vw;
         font-family: "Khand", sans-serif;
       }
 

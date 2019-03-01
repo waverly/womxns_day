@@ -385,7 +385,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n    height: 100%;\n    overflow: auto;\n    background: #FFF7EC;\n  }\n\n  .display-none{\n    /* display: none!important; */\n    opacity: 0;\n    visibility: hidden;\n  }\n\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'Khand', sans-serif;\n    background: transparent;\n  }\n  p{\n    font-family: 'Khand', sans-serif;\n    font-size: 4vw;\n    line-height: 1;\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n    height: 100%;\n    overflow: auto;\n    background: #FFF7EC;\n    background: white;\n  }\n\n  .display-none{\n    /* display: none!important; */\n    opacity: 0;\n    visibility: hidden;\n  }\n\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n    line-height: 2;\n    font-family: 'Khand', sans-serif;\n    background: transparent;\n  }\n  p{\n    font-family: 'Khand', sans-serif;\n    font-size: 4vw;\n    line-height: 1;\n  }\n  a {\n    text-decoration: none;\n    color: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -445,25 +445,25 @@ function (_Component) {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 71
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledPage, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 72
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Meta__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 73
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Inner, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 75
         },
         __self: this
       }, this.props.children)));
@@ -501,17 +501,16 @@ var NavStyles = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.with
 /*!*******************!*\
   !*** ./config.js ***!
   \*******************/
-/*! exports provided: endpoint, prodEndpoint, perPage */
+/*! exports provided: endpoint, perPage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prodEndpoint", function() { return prodEndpoint; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "perPage", function() { return perPage; });
 // This is client side config only - don't put anything in here that shouldn't be public!
-var endpoint = "http://localhost:4444";
-var prodEndpoint = "https://womxn-prod.herokuapp.com/";
+// export const endpoint = `http://localhost:4444`;
+var endpoint = "https://womxn-prod.herokuapp.com/";
 var perPage = 4;
 
 /***/ }),

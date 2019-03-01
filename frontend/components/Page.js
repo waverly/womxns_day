@@ -34,6 +34,7 @@ injectGlobal`
     height: 100%;
     overflow: auto;
     background: #FFF7EC;
+    background: white;
   }
 
   .display-none{

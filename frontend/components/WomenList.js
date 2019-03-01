@@ -27,12 +27,7 @@ class WomenList extends Component {
 
         // TODO: refactor to use refs instead
         const womenWrapper = document.getElementById("womanList");
-        const scrollEl = document.querySelector(`[data-nameid=${id}]`);
-
-        // console.log(womenWrapper);
-        // console.log(scrollEl);
-
-        // debugger;
+        const scrollEl = document.querySelector(`[data-scrollid=${id}]`);
 
         if (scrollEl) {
           const elScrollHeight = scrollEl.offsetTop;
@@ -42,11 +37,9 @@ class WomenList extends Component {
             el.classList.add("highlighted");
           });
 
-          // console.log(totalScrollHeight);
           window.scrollTo({
             top: totalScrollHeight,
             left: 0
-            // behavior: "smooth"
           });
         } else {
           window &&
@@ -68,8 +61,6 @@ class WomenList extends Component {
     document.addEventListener("scroll", this._throttleScroll);
     window.addEventListener("resize", setBodyHeight);
     this.setState({ scrollTop: window.pageYOffset });
-
-    console.log("COMPONENT DID MOUNT");
     this._scrollToHash();
   }
 

@@ -29,7 +29,7 @@ export const WomenListWrap = styled.div`
   }
 
   .womanItem {
-    width: 100%;
+    /* width: 100%; */
     background: transparent;
     display: flex;
     align-items: center;
@@ -44,13 +44,18 @@ export const WomenListWrap = styled.div`
     .super-cta {
       position: absolute;
       right: 0;
-      top: -30px;
-      font-size: 2rem;
+      top: -5vw;
+      font-size: 3vw;
       text-transform: uppercase;
       color: black;
-      -webkit-text-stroke: 1px black;
+      -webkit-text-stroke: 2px black;
       color: ${props => props.theme.darkerOffWhite};
       display: none;
+
+      @media screen and (max-width: 768px) {
+        font-size: 5vw;
+        top: -7vw;
+      }
     }
 
     &.highlighted {
@@ -123,7 +128,7 @@ export const WomenListWrap = styled.div`
     h1 {
       text-transform: uppercase;
       font-size: 14vw;
-      display: block;
+      display: inline-block;
       margin-block-start: 10px;
       margin-block-end: 10px;
       height: auto;
@@ -131,8 +136,14 @@ export const WomenListWrap = styled.div`
       line-height: 0.7;
       margin-block-start: 1rem;
       margin-block-end: 1rem;
+      /* width: max-content; */
+      word-break: break-word;
       &:hover {
         color: transparent;
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: 18vw;
       }
     }
   }

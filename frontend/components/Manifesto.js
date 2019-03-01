@@ -22,6 +22,10 @@ const ManifestoWrapper = styled.button`
     margin: 0 auto;
     color: black;
     text-align: left;
+
+    p {
+      color: black;
+    }
   }
 
   .click-to-enter {
@@ -43,14 +47,12 @@ const Manifesto = () => (
       <ManifestoWrapper>
         <div className="module">
           <p>
-            Why is this day important? Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+            Today our website is dedicated to celebrating gender equality.
+            <br /> <br />
+            We want to historicize those who have supported this cause, as
+            oftentimes these efforts go unseen and unacknowledged. By simply
+            leaving a name of someone who exemplifies this, you are
+            commemorating their efforts in this vital cause.
           </p>
         </div>
         <p className="click-to-enter">Click to start</p>

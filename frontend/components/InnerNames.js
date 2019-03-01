@@ -4,6 +4,7 @@ import { genId, _onShareClick, _addHighlightClass } from "./helpers";
 
 const OuterWrap = styled.div`
   overflow: hidden;
+  padding-top: 5vw;
 `;
 
 const _renderNamesWithId = (names, highlightedid) => {
@@ -14,6 +15,7 @@ const _renderNamesWithId = (names, highlightedid) => {
 
       return (
         <div
+          data-scrollid={personId}
           data-nameid={personId}
           className={
             highlightedid === personId
@@ -41,6 +43,7 @@ const _renderNames = (names, highlightedid) => {
       const personId = genId(woman.name);
       return (
         <div
+          data-nameid={personId}
           className={
             highlightedid === personId
               ? `womanItem ${personId} ${highlightedid} highlighted`

@@ -39,7 +39,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var OuterWrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "InnerNames__OuterWrap",
   componentId: "njma8s-0"
-})(["overflow:hidden;"]);
+})(["overflow:hidden;padding-top:5vw;"]);
 
 var _renderNamesWithId = function _renderNamesWithId(names, highlightedid) {
   if (names) {
@@ -47,6 +47,7 @@ var _renderNamesWithId = function _renderNamesWithId(names, highlightedid) {
       var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["genId"])(woman.name); //   console.log(personId);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "data-scrollid": personId,
         "data-nameid": personId,
         className: highlightedid === personId ? "womanItem ".concat(personId, " ").concat(highlightedid, " highlighted") : "womanItem ".concat(personId),
         key: woman.id + personId + index,
@@ -55,14 +56,14 @@ var _renderNamesWithId = function _renderNamesWithId(names, highlightedid) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 17
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "inner-relative",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 28
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -72,13 +73,13 @@ var _renderNamesWithId = function _renderNamesWithId(names, highlightedid) {
         className: "super-cta",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 29
         },
         __self: this
       }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 32
         },
         __self: this
       }, woman.name)));
@@ -91,6 +92,7 @@ var _renderNames = function _renderNames(names, highlightedid) {
     return names.map(function (woman, index) {
       var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["genId"])(woman.name);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "data-nameid": personId,
         className: highlightedid === personId ? "womanItem ".concat(personId, " ").concat(highlightedid, " highlighted") : "womanItem ".concat(personId),
         key: woman.id + personId + index,
         onClick: function onClick(e) {
@@ -98,14 +100,14 @@ var _renderNames = function _renderNames(names, highlightedid) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "inner-relative",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 55
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -115,13 +117,13 @@ var _renderNames = function _renderNames(names, highlightedid) {
         className: "super-cta",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 56
         },
         __self: this
       }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 59
         },
         __self: this
       }, woman.name)));
@@ -147,7 +149,7 @@ function (_React$PureComponent) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(OuterWrap, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 72
         },
         __self: this
       }, this.props.renderwithid ? _renderNamesWithId(this.props.names, this.props.highlightedid) : _renderNames(this.props.names, this.props.highlightedid));
@@ -590,9 +592,7 @@ function (_Component) {
 
 
           var womenWrapper = document.getElementById("womanList");
-          var scrollEl = document.querySelector("[data-nameid=".concat(id, "]")); // console.log(womenWrapper);
-          // console.log(scrollEl);
-          // debugger;
+          var scrollEl = document.querySelector("[data-scrollid=".concat(id, "]"));
 
           if (scrollEl) {
             var elScrollHeight = scrollEl.offsetTop;
@@ -600,12 +600,10 @@ function (_Component) {
             var totalScrollHeight = elScrollHeight - halfHeight;
             document.querySelectorAll(".".concat(id)).forEach(function (el) {
               el.classList.add("highlighted");
-            }); // console.log(totalScrollHeight);
-
+            });
             window.scrollTo({
               top: totalScrollHeight,
-              left: 0 // behavior: "smooth"
-
+              left: 0
             });
           } else {
             window && (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" && window.scrollTo && typeof window.scrollTo === "function" && window.scrollTo(0, 0);
@@ -642,7 +640,6 @@ function (_Component) {
       this.setState({
         scrollTop: window.pageYOffset
       });
-      console.log("COMPONENT DID MOUNT");
 
       this._scrollToHash();
     }
@@ -673,7 +670,7 @@ function (_Component) {
       var containers = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 91
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["WomenListWrap"], {
@@ -683,7 +680,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 92
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -693,14 +690,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 98
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 121
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -711,7 +708,7 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 122
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -719,20 +716,20 @@ function (_Component) {
         names: reversedNames,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 129
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 136
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 137
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -744,7 +741,7 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 138
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -753,7 +750,7 @@ function (_Component) {
         renderwithid: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155
+          lineNumber: 146
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -763,7 +760,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 163
+          lineNumber: 154
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -774,7 +771,7 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 177
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -782,7 +779,7 @@ function (_Component) {
         names: reversedNames,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193
+          lineNumber: 184
         },
         __self: this
       })))));
@@ -826,6 +823,7 @@ var setBodyHeight = function setBodyHeight() {
       // calculate half of window height and add to women's list
 
       var halfHeight = window.innerHeight / 1.5;
+      console.log("in set body height ", womanListHeight);
       document.body.style.height = womanListHeight + womanListHeight * 0.05 + "px";
     }
   }
@@ -835,23 +833,28 @@ var genId = function genId(name) {
   return id;
 };
 var _onShareClick = function _onShareClick(e) {
-  console.log("inside ons hare click");
-  var id = e.currentTarget.parentNode.parentNode.dataset.nameid;
-  console.log({
-    id: id
-  });
-  var domain = "http://localhost:7777";
-  var link = "".concat(domain, "/names#").concat(id);
-  var dummy = document.createElement("textarea");
-  document.body.appendChild(dummy);
-  dummy.classList.add("display-none");
-  dummy.innerHTML = link;
-  console.log(dummy);
-  dummy.select();
-  document.execCommand("copy");
-  document.body.removeChild(dummy);
-  console.log(link);
-  e.currentTarget.innerHTML = "Copied to clipboard";
+  try {
+    console.log("inside ons hare click");
+    var id = e.currentTarget.parentNode.parentNode.dataset.nameid;
+    console.log({
+      id: id
+    });
+    var domain = "http://localhost:7777";
+    var link = "".concat(domain, "/names#").concat(id);
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.classList.add("display-none");
+    dummy.value = link;
+    console.log(dummy.value);
+    console.log(dummy);
+    dummy.select();
+    document.execCommand("copy");
+    alert("Copied the text: " + dummy.value);
+    document.body.removeChild(dummy);
+    e.currentTarget.innerHTML = "Copied to clipboard";
+  } catch (err) {
+    console.log("Error while copying to clipboard: " + err);
+  }
 };
 var _addHighlightClass = function _addHighlightClass(e) {
   // extract data-nameid
@@ -899,7 +902,7 @@ __webpack_require__.r(__webpack_exports__);
 var WomenListWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "WomenList__WomenListWrap",
   componentId: "sc-3l0rl8-0"
-})(["position:fixed;top:0;left:0;width:90vw;left:5vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;transition:0.5s opacity;opacity:", ";.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;width:100%;}.womanItem{width:100%;background:transparent;display:flex;align-items:center;-webkit-transform:translate3d(0,0,0);.inner-relative{position:relative;display:inline-block !important;cursor:pointer;}.super-cta{position:absolute;right:0;top:-30px;font-size:2rem;text-transform:uppercase;color:black;-webkit-text-stroke:1px black;color:", ";display:none;}&.highlighted{.super-cta{display:block;}}&:nth-child(3n + 1){justify-content:flex-start;}&:nth-child(3n + 2){justify-content:center;text-align:center;}&:nth-child(3n + 3){justify-content:flex-end;text-align:right;}&:nth-child(4n + 1){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 2){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 3){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 4){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}h1{text-transform:uppercase;font-size:14vw;display:block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;line-height:0.7;margin-block-start:1rem;margin-block-end:1rem;&:hover{color:transparent;}}}"], function (props) {
+})(["position:fixed;top:0;left:0;width:90vw;left:5vw;top:0vh;height:90vh;-webkit-perspective:200px;perspective:200px;transition:0.5s opacity;opacity:", ";.hidden{overflow:hidden;}.womenWrapper{-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;padding-bottom:5%;position:absolute;top:0;width:100%;}.womanItem{background:transparent;display:flex;align-items:center;-webkit-transform:translate3d(0,0,0);.inner-relative{position:relative;display:inline-block !important;cursor:pointer;}.super-cta{position:absolute;right:0;top:-5vw;font-size:3vw;text-transform:uppercase;color:black;-webkit-text-stroke:2px black;color:", ";display:none;@media screen and (max-width:768px){font-size:5vw;top:-7vw;}}&.highlighted{.super-cta{display:block;}}&:nth-child(3n + 1){justify-content:flex-start;}&:nth-child(3n + 2){justify-content:center;text-align:center;}&:nth-child(3n + 3){justify-content:flex-end;text-align:right;}&:nth-child(4n + 1){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 2){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 3){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}&:nth-child(4n + 4){h1{color:", ";-webkit-text-stroke:2px ", ";}&.highlighted{h1{color:transparent;-webkit-text-stroke:2px ", ";}}}h1{text-transform:uppercase;font-size:14vw;display:inline-block;margin-block-start:10px;margin-block-end:10px;height:auto;transition:0.5s all;line-height:0.7;margin-block-start:1rem;margin-block-end:1rem;word-break:break-word;&:hover{color:transparent;}@media screen and (max-width:768px){font-size:18vw;}}}"], function (props) {
   return props.formFocused ? ".1" : "1";
 }, function (props) {
   return props.theme.darkerOffWhite;
