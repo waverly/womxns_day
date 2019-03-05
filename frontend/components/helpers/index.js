@@ -8,6 +8,7 @@ export const setBodyHeight = () => {
       // calculate half of window height and add to women's list
       const halfHeight = window.innerHeight / 1.5;
 
+      console.log("in set body height ", womanListHeight);
       document.body.style.height =
         womanListHeight + womanListHeight * 0.05 + "px";
     }
@@ -22,24 +23,6 @@ export const genId = name => {
     .toLowerCase();
 
   return id;
-};
-
-export const _onShareClick = e => {
-  try {
-    console.log("inside ons hare click");
-    const dummy = document.createElement("input");
-    document.body.appendChild(dummy);
-    dummy.classList.add("display-none");
-    dummy.value = "zis appeares to verk";
-    console.log(dummy.value);
-    console.log(dummy);
-    dummy.select();
-    document.execCommand("copy");
-    alert("Copied the text: " + dummy.value);
-    document.body.removeChild(dummy);
-  } catch (err) {
-    console.log("Error while copying to clipboard: " + err);
-  }
 };
 
 export const _addHighlightClass = e => {
