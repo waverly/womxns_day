@@ -16,6 +16,10 @@ export const WomenListWrap = styled.div`
     overflow: hidden;
   }
 
+  @media screen and (max-width: 768px) {
+    margin-top: -25vh;
+  }
+
   .womenWrapper {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -55,6 +59,7 @@ export const WomenListWrap = styled.div`
       @media screen and (max-width: 768px) {
         font-size: 5vw;
         top: -7vw;
+        -webkit-text-stroke: 1px black;
       }
     }
 

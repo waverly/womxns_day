@@ -160,6 +160,17 @@ class Women extends Component {
     this.setState({ formFocused: 0 });
   };
 
+  componentDidMount() {
+    if (typeof window === "undefined") {
+      return 0;
+    } else {
+      this.setState({ isMobile: window.innerWidth < 768 });
+      window.addEventListener("resize", () => {
+        this.setState({ isMobile: window.innerWidth < 768 });
+      });
+    }
+  }
+
   render() {
     return (
       <Fragment>
@@ -174,10 +185,18 @@ class Women extends Component {
                   <WomenList
                     formFocused={this.state.formFocused}
                     women={data.women}
-                    x={this.state.x}
-                    y={this.state.y}
-                    matrix3DVal1={this.state.matrix3DVal1}
-                    matrix3DVal2={this.state.matrix3DVal2}
+                    x={this.state.isMobile ? 0 : this.state.x}
+                    y={this.state.isMobile ? 389 : this.state.y}
+                    matrix3DVal1={
+                      this.state.isMobile
+                        ? 0.67413793103448276
+                        : this.state.matrix3DVal1
+                    }
+                    matrix3DVal2={
+                      this.state.isMobile
+                        ? 0.7212807881773398
+                        : this.state.matrix3DVal2
+                    }
                   />
                 </Fragment>
               );

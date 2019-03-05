@@ -15,6 +15,7 @@ class MyApp extends App {
   }
 
   componentDidMount() {
+    console.log(window.location);
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
