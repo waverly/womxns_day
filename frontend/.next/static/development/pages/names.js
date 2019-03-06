@@ -44,7 +44,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var OuterWrap = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "InnerNames__OuterWrap",
   componentId: "njma8s-0"
-})(["overflow:hidden;padding-top:5vw;"]); // TODO: figure out why mouseMove is causing this component to rerender
+})(["overflow:hidden;padding-top:40vh;"]); // TODO: figure out why mouseMove is causing this component to rerender
 
 var InnerNames =
 /*#__PURE__*/

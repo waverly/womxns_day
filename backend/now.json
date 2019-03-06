@@ -1,6 +1,15 @@
 {
   "version": 2,
-  "name": "WOMXN DAY NOW",
+  "name": "WOMXNYOGASERVER",
   "builds": [{ "src": "src/index.js", "use": "@now/node-server" }],
-  "routes": [{ "src": "/.*", "dest": "src/index.js" }]
+  "routes": [{ "src": "/.*", "dest": "src/index.js" }],
+  "env": {
+    "FRONTEND_URL": "womxn-day.now.sh",
+    "PRISMA_ENDPOINT": "https://womxns-production-147e0876b5.herokuapp.com/womxn-prod/prod",
+    "PRISMA_SECRET": "7659a8c0fbdc2bbffa3912bec3a9864d19cb5ed1",
+    "PRISMA_MANAGEMENT_API_SECRET": "7659a8c0fbdc2bbffa3912bec3a9864d19cb5ed1",
+    "APP_SECRET": "jwtsecret123",
+    "STRIPE_SECRET": "sk_123youchanget his",
+    "PORT": "4444"
+  }
 }

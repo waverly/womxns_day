@@ -1,6 +1,11 @@
-require("dotenv").config({ path: "variables.env" });
+const path = require("path");
+require("dotenv").config({
+  path: path.resolve(__dirname, "..", "variables.env")
+});
 const createServer = require("./createServer");
 const db = require("./db");
+
+path.resolve(__dirname, "generated/prisma.graphql");
 
 const server = createServer();
 

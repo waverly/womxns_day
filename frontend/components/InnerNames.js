@@ -5,7 +5,7 @@ import { genId, _onShareClick, _addHighlightClass } from "./helpers";
 
 const OuterWrap = styled.div`
   overflow: hidden;
-  padding-top: 5vw;
+  padding-top: 40vh;
 `;
 
 // TODO: figure out why mouseMove is causing this component to rerender
@@ -19,8 +19,6 @@ class InnerNames extends React.PureComponent {
     if (names) {
       return names.map((woman, index) => {
         const personId = genId(woman.name);
-        //   console.log(personId);
-
         return (
           <div
             data-scrollid={personId}
