@@ -1,20 +1,7 @@
 import React, { Component, Fragment } from "react";
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
 import styled from "styled-components";
 import Nav from "./Nav";
 import WomenList from "./WomenList";
-
-const ALL_WOMEN_QUERY = gql`
-  query ALL_WOMEN_QUERY {
-    women(orderBy: createdAt_DESC) {
-      id
-      name
-      createdAt
-      slug
-    }
-  }
-`;
 
 const Center = styled.div`
   position: fixed;
@@ -176,32 +163,24 @@ class Women extends Component {
       <Fragment>
         <Nav />
         <Center onMouseMove={this._onMouseMove}>
-          <Query query={ALL_WOMEN_QUERY} refetch={true}>
-            {({ data, error, loading }) => {
-              if (loading) return null;
-              if (error) return <p>Error: {error.message}</p>;
-              return (
-                <Fragment>
-                  <WomenList
-                    formFocused={this.state.formFocused}
-                    women={data.women}
-                    x={this.state.isMobile ? 0 : this.state.x}
-                    y={this.state.isMobile ? 389 : this.state.y}
-                    matrix3DVal1={
-                      this.state.isMobile
-                        ? 0.67413793103448276
-                        : this.state.matrix3DVal1
-                    }
-                    matrix3DVal2={
-                      this.state.isMobile
-                        ? 0.7212807881773398
-                        : this.state.matrix3DVal2
-                    }
-                  />
-                </Fragment>
-              );
-            }}
-          </Query>
+          <Fragment>
+            <WomenList
+                formFocused={this.state.formFocused}
+                women={this.props.women}
+                x={this.state.isMobile ? 0 : this.state.x}
+                y={this.state.isMobile ? 389 : this.state.y}
+                matrix3DVal1={
+                  this.state.isMobile
+                    ? 0.67413793103448276
+                    : this.state.matrix3DVal1
+                }
+                matrix3DVal2={
+                  this.state.isMobile
+                    ? 0.7212807881773398
+                    : this.state.matrix3DVal2
+                }
+              />
+          </Fragment>
         </Center>
       </Fragment>
     );
@@ -209,4 +188,3 @@ class Women extends Component {
 }
 
 export default Women;
-export { ALL_WOMEN_QUERY };

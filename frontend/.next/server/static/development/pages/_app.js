@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! nprogress */ "nprogress");
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Nav */ "./components/Nav.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Header.js";
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/Header.js";
 
 
 
@@ -135,13 +135,13 @@ next_router__WEBPACK_IMPORTED_MODULE_3___default.a.onRouteChangeError = function
 
 var Logo = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.h1.withConfig({
   displayName: "Header__Logo",
-  componentId: "sc-2cpreo-0"
+  componentId: "sc-1fskhuc-0"
 })(["font-size:4rem;margin-left:2rem;position:relative;z-index:2;transform:skew(-7deg);a{padding:0.5rem 1rem;background:", ";color:white;text-transform:uppercase;text-decoration:none;}@media (max-width:1300px){margin:0;text-align:center;}"], function (props) {
   return props.theme.red;
 });
 var StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.header.withConfig({
   displayName: "Header__StyledHeader",
-  componentId: "sc-2cpreo-1"
+  componentId: "sc-1fskhuc-1"
 })([".bar{border-bottom:10px solid ", ";display:grid;grid-template-columns:auto 1fr;justify-content:space-between;align-items:stretch;@media (max-width:1300px){grid-template-columns:1fr;justify-content:center;}}.sub-bar{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid ", ";}"], function (props) {
   return props.theme.black;
 }, function (props) {
@@ -226,7 +226,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Meta.js";
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/Meta.js";
 
 
 
@@ -304,7 +304,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "next/link");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _styles_NavStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/NavStyles */ "./components/styles/NavStyles.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Nav.js";
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/Nav.js";
 
 
 
@@ -364,7 +364,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
 /* harmony import */ var _Meta__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Meta */ "./components/Meta.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Page.js";
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/Page.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -497,62 +497,6 @@ var NavStyles = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.ul.with
 
 /***/ }),
 
-/***/ "./config.js":
-/*!*******************!*\
-  !*** ./config.js ***!
-  \*******************/
-/*! exports provided: endpoint, prodEndpoint, perPage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prodEndpoint", function() { return prodEndpoint; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "perPage", function() { return perPage; });
-// This is client side config only - don't put anything in here that shouldn't be public!
-var endpoint = "http://localhost:4444";
-var prodEndpoint = "https://womxn-yoga-prod.herokuapp.com/";
-var perPage = 4;
-
-/***/ }),
-
-/***/ "./lib/withData.js":
-/*!*************************!*\
-  !*** ./lib/withData.js ***!
-  \*************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var next_with_apollo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next-with-apollo */ "next-with-apollo");
-/* harmony import */ var next_with_apollo__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_with_apollo__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var apollo_boost__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! apollo-boost */ "apollo-boost");
-/* harmony import */ var apollo_boost__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(apollo_boost__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config */ "./config.js");
-
-
-
-
-function createClient(_ref) {
-  var headers = _ref.headers;
-  return new apollo_boost__WEBPACK_IMPORTED_MODULE_1___default.a({
-    uri:  true ? _config__WEBPACK_IMPORTED_MODULE_2__["endpoint"] : undefined,
-    request: function request(operation) {
-      operation.setContext({
-        // fetchOptions: {
-        //   credentials: "include"
-        // },
-        headers: headers
-      });
-    }
-  });
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (next_with_apollo__WEBPACK_IMPORTED_MODULE_0___default()(createClient));
-
-/***/ }),
-
 /***/ "./pages/_app.js":
 /*!***********************!*\
   !*** ./pages/_app.js ***!
@@ -562,6 +506,7 @@ function createClient(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyApp; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "@babel/runtime/regenerator");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
@@ -569,11 +514,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/app */ "next/app");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Page */ "./components/Page.js");
-/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-apollo */ "react-apollo");
-/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _lib_withData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/withData */ "./lib/withData.js");
 
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/pages/_app.js";
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/pages/_app.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -600,7 +542,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+__webpack_require__(/*! es6-promise */ "es6-promise").polyfill();
 
+__webpack_require__(/*! isomorphic-fetch */ "isomorphic-fetch");
 
 
 
@@ -619,48 +563,35 @@ function (_App) {
   _createClass(MyApp, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      console.log(window.location);
-
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
     }
   }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {}
-  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
-          apollo = _this$props.apollo,
           pageProps = _this$props.pageProps;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_4__["ApolloProvider"], {
-        client: apollo,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 29
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 30
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 31
         },
         __self: this
-      })))));
+      }))));
     }
   }], [{
     key: "getInitialProps",
@@ -711,7 +642,7 @@ function (_App) {
   return MyApp;
 }(next_app__WEBPACK_IMPORTED_MODULE_2___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_lib_withData__WEBPACK_IMPORTED_MODULE_5__["default"])(MyApp));
+
 
 /***/ }),
 
@@ -738,25 +669,25 @@ module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 
-/***/ "apollo-boost":
-/*!*******************************!*\
-  !*** external "apollo-boost" ***!
-  \*******************************/
+/***/ "es6-promise":
+/*!******************************!*\
+  !*** external "es6-promise" ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("apollo-boost");
+module.exports = require("es6-promise");
 
 /***/ }),
 
-/***/ "next-with-apollo":
+/***/ "isomorphic-fetch":
 /*!***********************************!*\
-  !*** external "next-with-apollo" ***!
+  !*** external "isomorphic-fetch" ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("next-with-apollo");
+module.exports = require("isomorphic-fetch");
 
 /***/ }),
 
@@ -823,17 +754,6 @@ module.exports = require("nprogress");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-apollo":
-/*!*******************************!*\
-  !*** external "react-apollo" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-apollo");
 
 /***/ }),
 

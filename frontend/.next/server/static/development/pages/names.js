@@ -109,7 +109,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-copy-to-clipboard */ "react-copy-to-clipboard");
 /* harmony import */ var react_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/InnerNames.js";
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config */ "./config.js");
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/InnerNames.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -130,6 +131,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -165,8 +167,7 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_renderNamesWithId", function (names, highlightedid) {
       if (names) {
         return names.map(function (woman, index) {
-          var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["genId"])(woman.name); //   console.log(personId);
-
+          var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["genId"])(woman);
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             "data-scrollid": personId,
             "data-nameid": personId,
@@ -177,18 +178,18 @@ function (_React$PureComponent) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 25
+              lineNumber: 24
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             className: "inner-relative",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 35
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2__["CopyToClipboard"], {
-            text: "".concat(window.location.host, "/names#").concat(personId),
+            text: "".concat(_config__WEBPACK_IMPORTED_MODULE_4__["frontend"], "/names#").concat(personId),
             onCopy: function onCopy() {
               return _this.setState({
                 copied: true
@@ -196,23 +197,23 @@ function (_React$PureComponent) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 36
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             className: "super-cta",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 41
+              lineNumber: 40
             },
             __self: this
           }, _this.state.copied ? "Copied to clipboard" : "Share")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 46
+              lineNumber: 45
             },
             __self: this
-          }, woman.name)));
+          }, woman)));
         });
       }
     });
@@ -220,7 +221,7 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_renderNames", function (names, highlightedid) {
       if (names) {
         return names.map(function (woman, index) {
-          var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["genId"])(woman.name);
+          var personId = Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["genId"])(woman);
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             "data-nameid": personId,
             className: highlightedid === personId ? "womanItem ".concat(personId, " ").concat(highlightedid, " highlighted") : "womanItem ".concat(personId),
@@ -230,18 +231,18 @@ function (_React$PureComponent) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 60
+              lineNumber: 59
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             className: "inner-relative",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 70
+              lineNumber: 69
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2__["CopyToClipboard"], {
-            text: "http://localhost:7777/names#".concat(personId),
+            text: "".concat(_config__WEBPACK_IMPORTED_MODULE_4__["frontend"], "/names#").concat(personId),
             onCopy: function onCopy() {
               return _this.setState({
                 copied: true
@@ -249,23 +250,23 @@ function (_React$PureComponent) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 71
+              lineNumber: 70
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             className: "super-cta",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 75
+              lineNumber: 74
             },
             __self: this
           }, _this.state.copied ? "Copied to clipboard" : "Share")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80
+              lineNumber: 79
             },
             __self: this
-          }, woman.name)));
+          }, woman)));
         });
       }
     });
@@ -279,7 +280,7 @@ function (_React$PureComponent) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(OuterWrap, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 89
         },
         __self: this
       }, this.props.renderwithid ? this._renderNamesWithId(this.props.names, this.props.highlightedid) : this._renderNames(this.props.names, this.props.highlightedid));
@@ -307,7 +308,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "next/link");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _styles_NavStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/NavStyles */ "./components/styles/NavStyles.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Nav.js";
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/Nav.js";
 
 
 
@@ -356,23 +357,18 @@ var Nav = function Nav() {
 /*!*****************************!*\
   !*** ./components/Women.js ***!
   \*****************************/
-/*! exports provided: default, ALL_WOMEN_QUERY */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ALL_WOMEN_QUERY", function() { return ALL_WOMEN_QUERY; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-apollo */ "react-apollo");
-/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Nav */ "./components/Nav.js");
-/* harmony import */ var _WomenList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./WomenList */ "./components/WomenList.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Women.js";
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./components/Nav.js");
+/* harmony import */ var _WomenList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./WomenList */ "./components/WomenList.js");
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/Women.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -394,30 +390,15 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  query ALL_WOMEN_QUERY {\n    women(orderBy: createdAt_DESC) {\n      id\n      name\n      createdAt\n      slug\n    }\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
-
-
-
-var ALL_WOMEN_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
-var Center = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
+var Center = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Women__Center",
   componentId: "sc-188374r-0"
 })(["position:fixed;width:100vw;height:100vh;perspective:150px;top:0;left:0;"]);
-var ManifestoWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.button.withConfig({
+var ManifestoWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "Women__ManifestoWrapper",
   componentId: "sc-188374r-1"
 })(["width:100vw;height:100vh;background:rgba(0,0,0,0.8);display:", ";justify-content:center;align-items:center;position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;.module{width:70%;height:70%;color:white;background:black;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:50px;margin:0 auto;}h1{color:", ";}"], function (props) {
@@ -578,67 +559,44 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 163
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 164
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Center, {
         onMouseMove: this._onMouseMove,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 165
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
-        query: ALL_WOMEN_QUERY,
-        refetch: true,
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 166
         },
         __self: this
-      }, function (_ref) {
-        var data = _ref.data,
-            error = _ref.error,
-            loading = _ref.loading;
-        if (loading) return null;
-        if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 182
-          },
-          __self: this
-        }, "Error: ", error.message);
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 184
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          formFocused: _this3.state.formFocused,
-          women: data.women,
-          x: _this3.state.isMobile ? 0 : _this3.state.x,
-          y: _this3.state.isMobile ? 389 : _this3.state.y,
-          matrix3DVal1: _this3.state.isMobile ? 0.67413793103448276 : _this3.state.matrix3DVal1,
-          matrix3DVal2: _this3.state.isMobile ? 0.7212807881773398 : _this3.state.matrix3DVal2,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 185
-          },
-          __self: this
-        }));
-      })));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        formFocused: this.state.formFocused,
+        women: this.props.women,
+        x: this.state.isMobile ? 0 : this.state.x,
+        y: this.state.isMobile ? 389 : this.state.y,
+        matrix3DVal1: this.state.isMobile ? 0.67413793103448276 : this.state.matrix3DVal1,
+        matrix3DVal2: this.state.isMobile ? 0.7212807881773398 : this.state.matrix3DVal2,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 167
+        },
+        __self: this
+      }))));
     }
   }]);
 
@@ -646,7 +604,6 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Women);
-
 
 /***/ }),
 
@@ -668,7 +625,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_WomenList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/WomenList */ "./components/styles/WomenList.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
 /* harmony import */ var _InnerNames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./InnerNames */ "./components/InnerNames.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/WomenList.js";
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/WomenList.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -806,21 +763,10 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      // const reversedNames = this.props.women.reverse();
-      var names = [{
-        name: "one"
-      }, {
-        name: "two"
-      }, {
-        name: "three"
-      }]; // console.log(names);
-      // const names = this.props.women;
-
-      var reversedNames = this.props.women;
       var containers = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["WomenListWrap"], {
@@ -830,7 +776,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 86
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -840,14 +786,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 92
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 115
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -858,28 +804,28 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 116
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
         highlightedid: this.state.highlightedId,
-        names: reversedNames,
+        names: this.props.women,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 123
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 130
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 131
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -891,16 +837,16 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 132
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
         highlightedid: this.state.highlightedId,
-        names: reversedNames,
+        names: this.props.women,
         renderwithid: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 140
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -910,7 +856,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 154
+          lineNumber: 148
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -921,15 +867,15 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 171
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
         highlightedid: this.state.highlightedId,
-        names: reversedNames,
+        names: this.props.women,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 178
         },
         __self: this
       })))));
@@ -963,6 +909,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setBodyHeight", function() { return setBodyHeight; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "genId", function() { return genId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_addHighlightClass", function() { return _addHighlightClass; });
+var queryString = __webpack_require__(/*! querystring */ "querystring");
+
 var setBodyHeight = function setBodyHeight() {
   if (typeof window === "undefined") {
     return 0;
@@ -978,9 +926,17 @@ var setBodyHeight = function setBodyHeight() {
   }
 };
 var genId = function genId(name) {
-  var id = name.replace(/[^a-zA-Z ]/g, "").split(" ").join("").toLowerCase();
-  return id;
+  return name.replace(/\s/g, "_").replace(/\W/ig, "").toLowerCase();
 };
+/* export const genId = name => {
+  const id = name
+    .replace(/[^a-zA-Z ]/g, "")
+    .split(" ")
+    .join("")
+    .toLowerCase();
+  return id;
+}; */
+
 var _addHighlightClass = function _addHighlightClass(e) {
   // extract data-nameid
   var dataId = e.currentTarget.dataset.nameid;
@@ -1089,6 +1045,23 @@ var InnerWrap = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.wit
 
 /***/ }),
 
+/***/ "./config.js":
+/*!*******************!*\
+  !*** ./config.js ***!
+  \*******************/
+/*! exports provided: endpoint, frontend */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "frontend", function() { return frontend; });
+// This is client side config only - don't put anything in here that shouldn't be public!
+var endpoint = "http://localhost:8080";
+var frontend = "http://localhost:7777";
+
+/***/ }),
+
 /***/ "./pages/names.js":
 /*!************************!*\
   !*** ./pages/names.js ***!
@@ -1098,30 +1071,117 @@ var InnerWrap = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.wit
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Women__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Women */ "./components/Women.js");
-var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/pages/names.js";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Names; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "@babel/runtime/regenerator");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Women__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Women */ "./components/Women.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config */ "./config.js");
+
+var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/pages/names.js";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
-var Home = function Home(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Women__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: this
-  }));
-};
 
-/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+var Names =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Names, _Component);
+
+  function Names() {
+    _classCallCheck(this, Names);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Names).apply(this, arguments));
+  }
+
+  _createClass(Names, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Women__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({}, this.props, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      })));
+    }
+  }], [{
+    key: "getInitialProps",
+    value: function () {
+      var _getInitialProps = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response, json, women;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch("".concat(_config__WEBPACK_IMPORTED_MODULE_3__["endpoint"], "/names"));
+
+              case 2:
+                response = _context.sent;
+                _context.next = 5;
+                return response.json();
+
+              case 5:
+                json = _context.sent;
+                women = json.result;
+                return _context.abrupt("return", {
+                  women: women
+                });
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      return function getInitialProps() {
+        return _getInitialProps.apply(this, arguments);
+      };
+    }()
+  }]);
+
+  return Names;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+
+
 
 /***/ }),
 
@@ -1137,14 +1197,14 @@ module.exports = __webpack_require__(/*! ./pages/names.js */"./pages/names.js");
 
 /***/ }),
 
-/***/ "graphql-tag":
-/*!******************************!*\
-  !*** external "graphql-tag" ***!
-  \******************************/
+/***/ "@babel/runtime/regenerator":
+/*!*********************************************!*\
+  !*** external "@babel/runtime/regenerator" ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("graphql-tag");
+module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 
@@ -1170,6 +1230,17 @@ module.exports = require("next/link");
 
 /***/ }),
 
+/***/ "querystring":
+/*!******************************!*\
+  !*** external "querystring" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("querystring");
+
+/***/ }),
+
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -1178,17 +1249,6 @@ module.exports = require("next/link");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-apollo":
-/*!*******************************!*\
-  !*** external "react-apollo" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-apollo");
 
 /***/ }),
 

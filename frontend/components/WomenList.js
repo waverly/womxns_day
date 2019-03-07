@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import * as _ from "lodash";
 import { WomenListWrap, Container, InnerWrap } from "./styles/WomenList";
-import { genId, setBodyHeight, _addHighlightClass } from "./helpers";
+import { setBodyHeight, _addHighlightClass } from "./helpers";
 import InnerNames from "./InnerNames";
 
 class WomenList extends Component {
@@ -81,12 +81,6 @@ class WomenList extends Component {
   _throttleScroll = _.throttle(this._onScroll, 100);
 
   render() {
-    // const reversedNames = this.props.women.reverse();
-    const names = [{ name: "one" }, { name: "two" }, { name: "three" }];
-    // console.log(names);
-    // const names = this.props.women;
-    const reversedNames = this.props.women;
-
     const containers = (
       <Fragment>
         <WomenListWrap
@@ -128,7 +122,7 @@ class WomenList extends Component {
               >
                 <InnerNames
                   highlightedid={this.state.highlightedId}
-                  names={reversedNames}
+                  names={this.props.women}
                 />
               </InnerWrap>
             </div>
@@ -145,7 +139,7 @@ class WomenList extends Component {
               >
                 <InnerNames
                   highlightedid={this.state.highlightedId}
-                  names={reversedNames}
+                  names={this.props.women}
                   renderwithid={true}
                 />
               </InnerWrap>
@@ -183,7 +177,7 @@ class WomenList extends Component {
             >
               <InnerNames
                 highlightedid={this.state.highlightedId}
-                names={reversedNames}
+                names={this.props.women}
               />
             </InnerWrap>
           </Container>

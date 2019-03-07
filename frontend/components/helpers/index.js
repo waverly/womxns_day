@@ -1,3 +1,5 @@
+const queryString = require("querystring");
+
 export const setBodyHeight = () => {
   if (typeof window === "undefined") {
     return 0;
@@ -15,15 +17,21 @@ export const setBodyHeight = () => {
   }
 };
 
-export const genId = name => {
+export const genId = name =>
+  name
+  .replace(/\s/g, "_")
+  .replace(/\W/ig, "")
+  .toLowerCase();
+
+
+/* export const genId = name => {
   const id = name
     .replace(/[^a-zA-Z ]/g, "")
     .split(" ")
     .join("")
     .toLowerCase();
-
   return id;
-};
+}; */
 
 export const _addHighlightClass = e => {
   // extract data-nameid

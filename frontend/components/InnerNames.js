@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { genId, _onShareClick, _addHighlightClass } from "./helpers";
+import { frontend } from "../config";
 
 const OuterWrap = styled.div`
   overflow: hidden;
@@ -18,7 +19,7 @@ class InnerNames extends React.PureComponent {
   _renderNamesWithId = (names, highlightedid) => {
     if (names) {
       return names.map((woman, index) => {
-        const personId = genId(woman.name);
+        const personId = genId(woman);
         return (
           <div
             data-scrollid={personId}
@@ -33,7 +34,7 @@ class InnerNames extends React.PureComponent {
           >
             <span className="inner-relative">
               <CopyToClipboard
-                text={`${window.location.host}/names#${personId}`}
+                text={`${frontend}/names#${personId}`}
                 onCopy={() => this.setState({ copied: true })}
               >
                 <span className="super-cta">
@@ -41,7 +42,7 @@ class InnerNames extends React.PureComponent {
                 </span>
               </CopyToClipboard>
 
-              <h1>{woman.name}</h1>
+              <h1>{woman}</h1>
             </span>
           </div>
         );
@@ -52,7 +53,7 @@ class InnerNames extends React.PureComponent {
   _renderNames = (names, highlightedid) => {
     if (names) {
       return names.map((woman, index) => {
-        const personId = genId(woman.name);
+        const personId = genId(woman);
 
         return (
           <div
@@ -67,7 +68,7 @@ class InnerNames extends React.PureComponent {
           >
             <span className="inner-relative">
               <CopyToClipboard
-                text={`http://localhost:7777/names#${personId}`}
+                text={`${frontend}/names#${personId}`}
                 onCopy={() => this.setState({ copied: true })}
               >
                 <span className="super-cta">
@@ -75,7 +76,7 @@ class InnerNames extends React.PureComponent {
                 </span>
               </CopyToClipboard>
 
-              <h1>{woman.name}</h1>
+              <h1>{woman}</h1>
             </span>
           </div>
         );
