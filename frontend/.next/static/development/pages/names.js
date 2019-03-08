@@ -1010,7 +1010,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "frontend", function() { return frontend; });
 var endpoint = "https://womxns.api.nkla-dev.com";
-var frontend = "https://www.northkingdom.com";
+var frontend = "https://womxns-day-nk-2019.now.sh";
 
 /***/ }),
 
