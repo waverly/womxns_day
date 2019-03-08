@@ -269,6 +269,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./components/Nav.js");
 /* harmony import */ var _WomenList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./WomenList */ "./components/WomenList.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
 var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/Women.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -290,6 +291,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -461,48 +463,103 @@ function (_Component) {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       window.removeEventListener("resize", this._onResize);
-    }
+    } // static getDerivedStateFromProps(props, state) {
+    //   let names = props.women;
+    //   if (state.isMobile) {
+    //     names = names.slice(0, 10);
+    //     // console.log("is mobile", names);
+    //   } else {
+    //     // console.log(names);
+    //   }
+    //   return { names };
+    // }
+
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 169
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 170
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Center, {
-        onMouseMove: this._onMouseMove,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 171
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 172
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        formFocused: this.state.formFocused,
-        women: this.props.women,
-        x: this.state.isMobile ? 0 : this.state.x,
-        y: this.state.isMobile ? 389 : this.state.y,
-        matrix3DVal1: this.state.isMobile ? 0.67413793103448276 : this.state.matrix3DVal1,
-        matrix3DVal2: this.state.isMobile ? 0.7212807881773398 : this.state.matrix3DVal2,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 173
-        },
-        __self: this
-      }))));
+      console.log(this.props);
+
+      if (!this.state.isMobile) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 184
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 185
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Center, {
+          onMouseMove: this._onMouseMove,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 186
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 187
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          formFocused: this.state.formFocused,
+          women: this.props.women,
+          isMobile: this.state.isMobile,
+          x: this.state.isMobile ? 0 : this.state.x,
+          y: this.state.isMobile ? 389 : this.state.y,
+          matrix3DVal1: this.state.isMobile ? 0.67413793103448276 : this.state.matrix3DVal1,
+          matrix3DVal2: this.state.isMobile ? 0.7212807881773398 : this.state.matrix3DVal2,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 188
+          },
+          __self: this
+        }))));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 211
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 212
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Center, {
+          onMouseMove: this._onMouseMove,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 213
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 214
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WomenList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          formFocused: this.state.formFocused,
+          women: this.props.womenshort,
+          isMobile: this.state.isMobile,
+          x: this.state.isMobile ? 0 : this.state.x,
+          y: this.state.isMobile ? 389 : this.state.y,
+          matrix3DVal1: this.state.isMobile ? 0.67413793103448276 : this.state.matrix3DVal1,
+          matrix3DVal2: this.state.isMobile ? 0.7212807881773398 : this.state.matrix3DVal2,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 215
+          },
+          __self: this
+        }))));
+      }
     }
   }]);
 
@@ -589,8 +646,6 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "womenWithId", null);
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_setCopied", function (personId) {
-      console.log(personId);
-      console.log("inside of setCopied");
       var copy = Object.assign({}, _this.state.copied);
       copy[personId] = true;
 
@@ -634,12 +689,16 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_debounceSetBodyHeight", lodash__WEBPACK_IMPORTED_MODULE_2__["debounce"](_helpers__WEBPACK_IMPORTED_MODULE_4__["setBodyHeight"], 10));
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_onScroll", function (e) {
       var bodyScrollTop = window.pageYOffset;
 
       _this.setState({
         scrollTop: bodyScrollTop
       });
+
+      console.log("in scroll", _this.state.scrollTop);
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_throttleScroll", lodash__WEBPACK_IMPORTED_MODULE_2__["throttle"](_this._onScroll, 100));
@@ -648,11 +707,13 @@ function (_Component) {
   }
 
   _createClass(WomenList, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {}
-  }, {
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps) {}
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      // console.log(prevProps.women, this.props.women);
+      if (prevProps.women !== this.props.women) {
+        Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["setBodyHeight"])();
+      }
+    }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -668,20 +729,21 @@ function (_Component) {
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
+      window.removeEventListener("resize", _helpers__WEBPACK_IMPORTED_MODULE_4__["setBodyHeight"]);
+
       if (typeof window === "undefined") {
         return 0;
       } else if (typeof window != "undefined") {
         document.removeEventListener("scroll", this._throttleScroll);
       }
-    } // This will run the first time setBodyHeight is called.
-
+    }
   }, {
     key: "render",
     value: function render() {
       var containers = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 97
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["WomenListWrap"], {
@@ -691,7 +753,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 98
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -701,14 +763,14 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 104
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 127
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -719,7 +781,7 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 128
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -729,20 +791,20 @@ function (_Component) {
         copied: this.state.copied,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 135
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 144
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hidden",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 145
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -754,7 +816,7 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 146
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -765,7 +827,7 @@ function (_Component) {
         copied: this.state.copied,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150
+          lineNumber: 154
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -775,7 +837,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160
+          lineNumber: 164
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_WomenList__WEBPACK_IMPORTED_MODULE_3__["InnerWrap"], {
@@ -786,7 +848,7 @@ function (_Component) {
         className: "womenWrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 187
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InnerNames__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -796,7 +858,7 @@ function (_Component) {
         copied: this.state.copied,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 194
         },
         __self: this
       })))));
@@ -839,6 +901,7 @@ var setBodyHeight = function setBodyHeight() {
     if (document.getElementById("womanList")) {
       var womanListHeight = document.getElementById("womanList").scrollHeight;
       document.body.style.height = womanListHeight + womanListHeight * 0.05 + "px";
+      console.log("in set body height", womanListHeight);
     }
   }
 };
@@ -32883,13 +32946,13 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 15
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Women__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({}, this.props, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 16
         },
         __self: this
       })));
@@ -32900,7 +32963,7 @@ function (_Component) {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var response, json, women;
+        var response, json, womenshort, women;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -32915,12 +32978,14 @@ function (_Component) {
 
               case 5:
                 json = _context.sent;
+                womenshort = json.result.slice(0, 15);
                 women = json.result;
                 return _context.abrupt("return", {
-                  women: women
+                  women: women,
+                  womenshort: womenshort
                 });
 
-              case 8:
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -32960,7 +33025,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/names.js ***!
   \******************************/
@@ -32985,5 +33050,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=names.js.map

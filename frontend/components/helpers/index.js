@@ -8,6 +8,7 @@ export const setBodyHeight = () => {
       const womanListHeight = document.getElementById("womanList").scrollHeight;
       document.body.style.height =
         womanListHeight + womanListHeight * 0.05 + "px";
+      console.log("in set body height", womanListHeight);
     }
   }
 };

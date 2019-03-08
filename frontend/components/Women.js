@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import Nav from "./Nav";
 import WomenList from "./WomenList";
+import { setBodyHeight } from "./helpers";
 
 const Center = styled.div`
   position: fixed;
@@ -164,32 +165,75 @@ class Women extends Component {
     window.removeEventListener("resize", this._onResize);
   }
 
+  // static getDerivedStateFromProps(props, state) {
+  //   let names = props.women;
+  //   if (state.isMobile) {
+  //     names = names.slice(0, 10);
+  //     // console.log("is mobile", names);
+  //   } else {
+  //     // console.log(names);
+  //   }
+  //   return { names };
+  // }
+
   render() {
-    return (
-      <Fragment>
-        <Nav />
-        <Center onMouseMove={this._onMouseMove}>
-          <Fragment>
-            <WomenList
-              formFocused={this.state.formFocused}
-              women={this.props.women}
-              x={this.state.isMobile ? 0 : this.state.x}
-              y={this.state.isMobile ? 389 : this.state.y}
-              matrix3DVal1={
-                this.state.isMobile
-                  ? 0.67413793103448276
-                  : this.state.matrix3DVal1
-              }
-              matrix3DVal2={
-                this.state.isMobile
-                  ? 0.7212807881773398
-                  : this.state.matrix3DVal2
-              }
-            />
-          </Fragment>
-        </Center>
-      </Fragment>
-    );
+    console.log(this.props);
+
+    if (!this.state.isMobile) {
+      return (
+        <Fragment>
+          <Nav />
+          <Center onMouseMove={this._onMouseMove}>
+            <Fragment>
+              <WomenList
+                formFocused={this.state.formFocused}
+                women={this.props.women}
+                isMobile={this.state.isMobile}
+                x={this.state.isMobile ? 0 : this.state.x}
+                y={this.state.isMobile ? 389 : this.state.y}
+                matrix3DVal1={
+                  this.state.isMobile
+                    ? 0.67413793103448276
+                    : this.state.matrix3DVal1
+                }
+                matrix3DVal2={
+                  this.state.isMobile
+                    ? 0.7212807881773398
+                    : this.state.matrix3DVal2
+                }
+              />
+            </Fragment>
+          </Center>
+        </Fragment>
+      );
+    } else {
+      return (
+        <Fragment>
+          <Nav />
+          <Center onMouseMove={this._onMouseMove}>
+            <Fragment>
+              <WomenList
+                formFocused={this.state.formFocused}
+                women={this.props.womenshort}
+                isMobile={this.state.isMobile}
+                x={this.state.isMobile ? 0 : this.state.x}
+                y={this.state.isMobile ? 389 : this.state.y}
+                matrix3DVal1={
+                  this.state.isMobile
+                    ? 0.67413793103448276
+                    : this.state.matrix3DVal1
+                }
+                matrix3DVal2={
+                  this.state.isMobile
+                    ? 0.7212807881773398
+                    : this.state.matrix3DVal2
+                }
+              />
+            </Fragment>
+          </Center>
+        </Fragment>
+      );
+    }
   }
 }
 

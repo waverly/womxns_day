@@ -17,8 +17,6 @@ class WomenList extends Component {
   womenWithId = null;
 
   _setCopied = personId => {
-    console.log(personId);
-    console.log("inside of setCopied");
     const copy = Object.assign({}, this.state.copied);
     copy[personId] = true;
     this.setState({ copied: copy });
@@ -60,9 +58,14 @@ class WomenList extends Component {
     }
   };
 
-  componentWillMount() {}
+  componentDidUpdate(prevProps) {
+    // console.log(prevProps.women, this.props.women);
+    if (prevProps.women !== this.props.women) {
+      setBodyHeight();
+    }
+  }
 
-  componentWillReceiveProps(nextProps) {}
+  _debounceSetBodyHeight = _.debounce(setBodyHeight, 10);
 
   componentDidMount() {
     setBodyHeight();
@@ -73,6 +76,7 @@ class WomenList extends Component {
   }
 
   componentWillUnmount() {
+    window.removeEventListener("resize", setBodyHeight);
     if (typeof window === "undefined") {
       return 0;
     } else if (typeof window != "undefined") {
@@ -80,10 +84,10 @@ class WomenList extends Component {
     }
   }
 
-  // This will run the first time setBodyHeight is called.
   _onScroll = e => {
     const bodyScrollTop = window.pageYOffset;
     this.setState({ scrollTop: bodyScrollTop });
+    console.log("in scroll", this.state.scrollTop);
   };
 
   _throttleScroll = _.throttle(this._onScroll, 100);
