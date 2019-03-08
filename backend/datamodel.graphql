@@ -1,6 +1,0 @@
-type Woman {
-  id: ID! @unique
-  name: String!
-  slug: String!
-  createdAt: DateTime!
-}

@@ -1,9 +1,0 @@
-# import * from './schema_prep.graphql'
-
-type Mutation {
-    createWoman(name: String, slug: String): Woman
-}
-
-type Query {
-    women(where: WomanWhereInput, orderBy: DateTime): [Woman]!
-}
