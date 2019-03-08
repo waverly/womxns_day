@@ -55,6 +55,7 @@ export const WomenListWrap = styled.div`
       -webkit-text-stroke: 2px black;
       color: ${props => props.theme.darkerOffWhite};
       display: none;
+      width: max-content;
 
       @media screen and (max-width: 768px) {
         font-size: 5vw;
@@ -71,6 +72,10 @@ export const WomenListWrap = styled.div`
 
     &:nth-child(3n + 1) {
       justify-content: flex-start;
+      .super-cta {
+        right: unset;
+        left: 0;
+      }
     }
     &:nth-child(3n + 2) {
       justify-content: center;
@@ -141,6 +146,8 @@ export const WomenListWrap = styled.div`
       line-height: 0.7;
       margin-block-start: 1rem;
       margin-block-end: 1rem;
+      -webkit-margin-before: 1rem;
+      -webkit-margin-after: 1rem;
       /* width: max-content; */
       word-break: break-word;
       &:hover {
@@ -149,6 +156,9 @@ export const WomenListWrap = styled.div`
 
       @media screen and (max-width: 768px) {
         font-size: 18vw;
+        -webkit-margin-before: 10px;
+        -webkit-margin-after: 10px;
+}
       }
     }
   }
@@ -163,76 +173,14 @@ export const Container = styled.div`
   position: relative;
 
   &:first-of-type {
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: none;
-      width: 100%;
-      height: 80%;
-      background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(${props => props.theme.offWhite}),
-        to(rgba(17, 17, 17, 0))
-      );
-      background: -webkit-linear-gradient(
-        top,
-        from(${props => props.theme.offWhite}),
-        rgba(17, 17, 17, 0)
-      );
-      background: -o-linear-gradient(
-        top,
-        from(${props => props.theme.offWhite}),
-        rgba(17, 17, 17, 0)
-      );
-      background: linear-gradient(
-        to bottom,
-        from(${props => props.theme.offWhite}),
-        rgba(17, 17, 17, 0)
-      );
-      z-index: 20;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
+    @media screen and (max-width: 768px) {
+      transform: rotateX(20deg) !important;
     }
   }
 
   &:last-of-type {
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 80%;
-      background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(from(${props => props.theme.offWhite})),
-        to(rgba(17, 17, 17, 0))
-      );
-      background: -webkit-linear-gradient(
-        top,
-        rgba(17, 17, 17, 0),
-        from(${props => props.theme.offWhite})
-      );
-      background: -o-linear-gradient(
-        top,
-        rgba(17, 17, 17, 0),
-        from(${props => props.theme.offWhite})
-      );
-      background: linear-gradient(
-        to bottom,
-        rgba(17, 17, 17, 0),
-        from(${props => props.theme.offWhite})
-      );
-      z-index: 20;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
+    @media screen and (max-width: 768px) {
+      transform: rotateX(20deg) !important;
     }
   }
 `;

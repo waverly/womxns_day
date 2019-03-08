@@ -147,15 +147,21 @@ class Women extends Component {
     this.setState({ formFocused: 0 });
   };
 
+  _onResize = () => {
+    this.setState({ isMobile: window.innerWidth < 768 });
+  };
+
   componentDidMount() {
     if (typeof window === "undefined") {
       return 0;
     } else {
       this.setState({ isMobile: window.innerWidth < 768 });
-      window.addEventListener("resize", () => {
-        this.setState({ isMobile: window.innerWidth < 768 });
-      });
+      window.addEventListener("resize", this._onResize);
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._onResize);
   }
 
   render() {
@@ -165,21 +171,21 @@ class Women extends Component {
         <Center onMouseMove={this._onMouseMove}>
           <Fragment>
             <WomenList
-                formFocused={this.state.formFocused}
-                women={this.props.women}
-                x={this.state.isMobile ? 0 : this.state.x}
-                y={this.state.isMobile ? 389 : this.state.y}
-                matrix3DVal1={
-                  this.state.isMobile
-                    ? 0.67413793103448276
-                    : this.state.matrix3DVal1
-                }
-                matrix3DVal2={
-                  this.state.isMobile
-                    ? 0.7212807881773398
-                    : this.state.matrix3DVal2
-                }
-              />
+              formFocused={this.state.formFocused}
+              women={this.props.women}
+              x={this.state.isMobile ? 0 : this.state.x}
+              y={this.state.isMobile ? 389 : this.state.y}
+              matrix3DVal1={
+                this.state.isMobile
+                  ? 0.67413793103448276
+                  : this.state.matrix3DVal1
+              }
+              matrix3DVal2={
+                this.state.isMobile
+                  ? 0.7212807881773398
+                  : this.state.matrix3DVal2
+              }
+            />
           </Fragment>
         </Center>
       </Fragment>

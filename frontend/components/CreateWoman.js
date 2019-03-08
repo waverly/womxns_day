@@ -3,7 +3,7 @@ import Link from "next/link";
 import Router from "next/router";
 import Form, { Button } from "./styles/Form";
 import Error from "./ErrorMessage";
-import {endpoint} from "../config";
+import { endpoint } from "../config";
 import { genId } from "./helpers";
 
 class CreateWoman extends Component {
@@ -20,11 +20,11 @@ class CreateWoman extends Component {
     const res = await fetch(`${endpoint}/addname`, {
       method: "POST",
       headers: {
-        "Accept" : "application/json",
-        "Content-Type" : "application/json"
+        Accept: "application/json",
+        "Content-Type": "application/json"
       },
-      body : JSON.stringify({
-        name : this.state.name
+      body: JSON.stringify({
+        name: this.state.name
       })
     });
 
@@ -32,7 +32,19 @@ class CreateWoman extends Component {
     this.setState({ name: "" });
   };
 
-  render () {
+  componentDidMount() {
+    if (typeof window === "undefined") {
+      return 0;
+    } else if (typeof window != "undefined") {
+      const h = Math.max(
+        document.documentElement.clientHeight,
+        window.innerHeight || 0
+      );
+      document.body.style.height = h + "px";
+    }
+  }
+
+  render() {
     const loading = false;
     return (
       <Form onSubmit={this.onSubmit}>
@@ -58,6 +70,7 @@ class CreateWoman extends Component {
             <label htmlFor="title">
               Name
               <input
+                maxLength="50"
                 type="text"
                 id="name"
                 name="name"
@@ -67,10 +80,7 @@ class CreateWoman extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <Button
-              willdisplay={this.state.name.length > 0}
-              type="submit"
-            >
+            <Button willdisplay={this.state.name.length > 0} type="submit">
               <span>Submit</span>
               <svg
                 width="24"

@@ -9,8 +9,6 @@ const OuterWrap = styled.div`
   padding-top: 40vh;
 `;
 
-// TODO: figure out why mouseMove is causing this component to rerender
-
 class InnerNames extends React.PureComponent {
   state = {
     copied: false
@@ -35,10 +33,12 @@ class InnerNames extends React.PureComponent {
             <span className="inner-relative">
               <CopyToClipboard
                 text={`${frontend}/names#${personId}`}
-                onCopy={() => this.setState({ copied: true })}
+                onCopy={() => this.props.setCopied(personId)}
               >
                 <span className="super-cta">
-                  {this.state.copied ? "Copied to clipboard" : "Share"}
+                  {this.props.copied[personId]
+                    ? "Copied to clipboard"
+                    : "Share"}
                 </span>
               </CopyToClipboard>
 
@@ -59,7 +59,7 @@ class InnerNames extends React.PureComponent {
           <div
             data-nameid={personId}
             className={
-              highlightedid === personId
+              this.props.copied[personId]
                 ? `womanItem ${personId} ${highlightedid} highlighted`
                 : `womanItem ${personId}`
             }
@@ -69,10 +69,12 @@ class InnerNames extends React.PureComponent {
             <span className="inner-relative">
               <CopyToClipboard
                 text={`${frontend}/names#${personId}`}
-                onCopy={() => this.setState({ copied: true })}
+                onCopy={() => this.props.setCopied(personId)}
               >
                 <span className="super-cta">
-                  {this.state.copied ? "Copied to clipboard" : "Share"}
+                  {this.props.copied[personId]
+                    ? "Copied to clipboard"
+                    : "Share"}
                 </span>
               </CopyToClipboard>
 

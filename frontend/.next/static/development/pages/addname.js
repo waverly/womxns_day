@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config */ "./config.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./helpers */ "./components/helpers/index.js");
 
-var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/CreateWoman.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/CreateWoman.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -100,7 +100,7 @@ function (_Component) {
                 return fetch("".concat(_config__WEBPACK_IMPORTED_MODULE_6__["endpoint"], "/addname"), {
                   method: "POST",
                   headers: {
-                    "Accept": "application/json",
+                    Accept: "application/json",
                     "Content-Type": "application/json"
                   },
                   body: JSON.stringify({
@@ -133,6 +133,16 @@ function (_Component) {
   }
 
   _createClass(CreateWoman, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (typeof window === "undefined") {
+        return 0;
+      } else if (typeof window != "undefined") {
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        document.body.style.height = h + "px";
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var loading = false;
@@ -140,20 +150,20 @@ function (_Component) {
         onSubmit: this.onSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 50
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/names",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 51
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("svg", {
@@ -165,7 +175,7 @@ function (_Component) {
         xmlns: "http://www.w3.org/2000/svg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 53
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
@@ -173,7 +183,7 @@ function (_Component) {
         fill: "black",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 61
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -181,24 +191,25 @@ function (_Component) {
         "aria-busy": loading,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 69
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
         htmlFor: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 70
         },
         __self: this
       }, "Name", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        maxLength: "50",
         type: "text",
         id: "name",
         name: "name",
@@ -208,7 +219,7 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 72
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_4__["Button"], {
@@ -216,13 +227,13 @@ function (_Component) {
         type: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 83
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 84
         },
         __self: this
       }, "Submit"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("svg", {
@@ -233,7 +244,7 @@ function (_Component) {
         xmlns: "http://www.w3.org/2000/svg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
@@ -241,7 +252,7 @@ function (_Component) {
         fill: "black",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 92
         },
         __self: this
       }))))));
@@ -269,13 +280,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/components/ErrorMessage.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/components/ErrorMessage.js";
 
 
 
 var ErrorStyles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "ErrorMessage__ErrorStyles",
-  componentId: "sc-1gj85wk-0"
+  componentId: "sc-11u5fgj-0"
 })(["padding:2rem;background:white;margin:2rem 0;border:1px solid rgba(0,0,0,0.05);border-left:5px solid red;p{margin:0;font-weight:100;}strong{margin-right:1rem;}"]);
 
 var DisplayError = function DisplayError(_ref) {
@@ -359,27 +370,14 @@ var setBodyHeight = function setBodyHeight() {
     return 0;
   } else if (typeof window != "undefined") {
     if (document.getElementById("womanList")) {
-      var womanListHeight = document.getElementById("womanList").scrollHeight; // TODO: adjust bottom padding for responsive
-      // calculate half of window height and add to women's list
-
-      var halfHeight = window.innerHeight / 1.5;
-      console.log("in set body height ", womanListHeight);
+      var womanListHeight = document.getElementById("womanList").scrollHeight;
       document.body.style.height = womanListHeight + womanListHeight * 0.05 + "px";
     }
   }
 };
 var genId = function genId(name) {
-  return name.replace(/\s/g, "_").replace(/\W/ig, "").toLowerCase();
+  return name.replace(/\s/g, "_").replace(/\W/gi, "").toLowerCase();
 };
-/* export const genId = name => {
-  const id = name
-    .replace(/[^a-zA-Z ]/g, "")
-    .split(" ")
-    .join("")
-    .toLowerCase();
-  return id;
-}; */
-
 var _addHighlightClass = function _addHighlightClass(e) {
   // extract data-nameid
   var dataId = e.currentTarget.dataset.nameid;
@@ -434,9 +432,8 @@ var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.wi
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "frontend", function() { return frontend; });
-// This is client side config only - don't put anything in here that shouldn't be public!
-var endpoint = "http://localhost:8080";
-var frontend = "http://localhost:7777";
+var endpoint = "https://womxns.api.nkla-dev.com";
+var frontend = "https://www.northkingdom.com";
 
 /***/ }),
 
@@ -7497,12 +7494,12 @@ module.exports = __webpack_require__(/*! ./dist/lib/router */ "./node_modules/ne
 
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_18682c416555df0bf0b9 ***!
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_5d62d38be3592dca3a42 ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_18682c416555df0bf0b9 */ "dll-reference dll_18682c416555df0bf0b9"))("./node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_5d62d38be3592dca3a42 */ "dll-reference dll_5d62d38be3592dca3a42"))("./node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -8145,12 +8142,12 @@ module.exports = exports['default'];
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_18682c416555df0bf0b9 ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_5d62d38be3592dca3a42 ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_18682c416555df0bf0b9 */ "dll-reference dll_18682c416555df0bf0b9"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_5d62d38be3592dca3a42 */ "dll-reference dll_5d62d38be3592dca3a42"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -8758,12 +8755,12 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_18682c416555df0bf0b9 ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_5d62d38be3592dca3a42 ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_18682c416555df0bf0b9 */ "dll-reference dll_18682c416555df0bf0b9"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_5d62d38be3592dca3a42 */ "dll-reference dll_5d62d38be3592dca3a42"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
@@ -9141,12 +9138,12 @@ if (false) {} else {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_18682c416555df0bf0b9 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_5d62d38be3592dca3a42 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_18682c416555df0bf0b9 */ "dll-reference dll_18682c416555df0bf0b9"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_5d62d38be3592dca3a42 */ "dll-reference dll_5d62d38be3592dca3a42"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -14962,7 +14959,7 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_CreateWoman__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/CreateWoman */ "./components/CreateWoman.js");
-var _jsxFileName = "/Users/chrisconiglio/Repos/nk/womxns_day/frontend/pages/addname.js";
+var _jsxFileName = "/Users/waverly/Documents/Development/womxn/womxn_day/frontend/pages/addname.js";
 
 
 
@@ -15005,7 +15002,7 @@ var AddName = function AddName(props) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/addname.js ***!
   \********************************/
@@ -15019,16 +15016,16 @@ return { page: module.exports.default }});
 
 /***/ }),
 
-/***/ "dll-reference dll_18682c416555df0bf0b9":
+/***/ "dll-reference dll_5d62d38be3592dca3a42":
 /*!*******************************************!*\
-  !*** external "dll_18682c416555df0bf0b9" ***!
+  !*** external "dll_5d62d38be3592dca3a42" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_18682c416555df0bf0b9;
+module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[5,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=addname.js.map

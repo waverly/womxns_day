@@ -1,15 +1,15 @@
-import {Component} from "react";
+import { Component } from "react";
 import Women from "../components/Women";
-import {endpoint} from "../config";
+import { endpoint } from "../config";
 
 export default class Names extends Component {
   static async getInitialProps() {
     const response = await fetch(`${endpoint}/names`);
-    const json     = await response.json();
-    const women    = json.result;
-    return {women};
+    const json = await response.json();
+    const women = json.result;
+    return { women };
   }
-  render () {
+  render() {
     return (
       <div>
         <Women {...this.props} />

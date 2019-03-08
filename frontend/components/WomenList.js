@@ -9,14 +9,22 @@ class WomenList extends Component {
   state = {
     scrollTop: 0,
     newlyAddedItem: null,
-    highlightedId: null
+    highlightedId: null,
+    copied: {}
   };
 
   allWomen = null;
   womenWithId = null;
 
+  _setCopied = personId => {
+    console.log(personId);
+    console.log("inside of setCopied");
+    const copy = Object.assign({}, this.state.copied);
+    copy[personId] = true;
+    this.setState({ copied: copy });
+  };
+
   _scrollToHash = () => {
-    console.log("scroll to hash fx");
     if (typeof window === "undefined") {
       return 0;
     } else {
@@ -123,6 +131,8 @@ class WomenList extends Component {
                 <InnerNames
                   highlightedid={this.state.highlightedId}
                   names={this.props.women}
+                  setCopied={this._setCopied}
+                  copied={this.state.copied}
                 />
               </InnerWrap>
             </div>
@@ -141,6 +151,8 @@ class WomenList extends Component {
                   highlightedid={this.state.highlightedId}
                   names={this.props.women}
                   renderwithid={true}
+                  setCopied={this._setCopied}
+                  copied={this.state.copied}
                 />
               </InnerWrap>
             </div>
@@ -178,6 +190,8 @@ class WomenList extends Component {
               <InnerNames
                 highlightedid={this.state.highlightedId}
                 names={this.props.women}
+                setCopied={this._setCopied}
+                copied={this.state.copied}
               />
             </InnerWrap>
           </Container>

@@ -6,11 +6,6 @@ export const setBodyHeight = () => {
   } else if (typeof window != "undefined") {
     if (document.getElementById("womanList")) {
       const womanListHeight = document.getElementById("womanList").scrollHeight;
-      // TODO: adjust bottom padding for responsive
-      // calculate half of window height and add to women's list
-      const halfHeight = window.innerHeight / 1.5;
-
-      console.log("in set body height ", womanListHeight);
       document.body.style.height =
         womanListHeight + womanListHeight * 0.05 + "px";
     }
@@ -19,19 +14,9 @@ export const setBodyHeight = () => {
 
 export const genId = name =>
   name
-  .replace(/\s/g, "_")
-  .replace(/\W/ig, "")
-  .toLowerCase();
-
-
-/* export const genId = name => {
-  const id = name
-    .replace(/[^a-zA-Z ]/g, "")
-    .split(" ")
-    .join("")
+    .replace(/\s/g, "_")
+    .replace(/\W/gi, "")
     .toLowerCase();
-  return id;
-}; */
 
 export const _addHighlightClass = e => {
   // extract data-nameid
